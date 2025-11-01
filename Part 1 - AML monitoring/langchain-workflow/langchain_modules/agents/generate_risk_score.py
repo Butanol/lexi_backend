@@ -6,6 +6,7 @@ from langchain_groq import ChatGroq
 from typing import Dict
 import time
 
+
 # Set up the LLM model for Groq
 validation_llm = ChatGroq(
     model="openai/gpt-oss-20b",
@@ -45,42 +46,40 @@ TASK:
 Assess the risk score (0-100) for this transaction based on how close it comes to violating the regulatory rules provided above.
 
 SCORING GUIDELINES:
-- 0-25: Very Low Risk - Transaction is far from any rule violations (<50% of thresholds)
-- 26-45: Low Risk - Transaction uses 50-70% of regulatory thresholds
-- 46-65: Medium Risk - Transaction uses 70-85% of thresholds OR has documentation gaps
-- 66-85: High Risk - Transaction uses 85-95% of thresholds OR missing critical compliance requirements
-- 86-100: Very High Risk - Transaction is near violation or violates multiple requirements
-
+- 0-25: Very Low Risk - Transaction is far from any rule violations (less than 50% of thresholds triggered, all documentation present)
+- 26-45: Low Risk - Transaction uses 50-70% of regulatory thresholds OR minor documentation gaps
+- 46-65: Medium Risk - Transaction uses 70-85% of thresholds OR multiple minor gaps OR low-risk red flags
+- 66-85: High Risk - Transaction uses 85-95% of thresholds OR missing critical documentation OR moderate red flags
+- 86-100: Very High Risk - Transaction is near or exceeds thresholds, violates multiple rules, or has multiple critical red flags
 
 EVALUATION APPROACH:
-1. Review ALL rules in the provided regulatory framework
-2. Check transaction against each applicable rule's thresholds and requirements
-3. Identify any missing documentation or compliance gaps
-4. Consider cumulative risk from multiple factors
-5. Calculate proximity to each threshold as a percentage
-6. Assign higher scores for:
-   - Amounts near regulatory thresholds
-   - Missing required documentation (CDD, KYC, EDD, SOW)
-   - High-risk customer profiles (PEPs, high-risk jurisdictions)
-   - Incomplete SWIFT/wire transfer information
-   - Digital asset transactions without proper disclosure
-   - Any suspicious patterns or red flags
+1. Review ALL rules in the provided regulatory framework.
+2. For each rule, calculate a proximity percentage (0-100) of the transaction amount or factor to the rule threshold.
+3. Identify missing documentation or compliance gaps and assign moderate weight (not automatically maximum score).
+4. Identify suspicious patterns or red flags and assign proportional weight based on severity.
+5. Calculate cumulative risk score as the weighted average of:
+   - Proximity to thresholds
+   - Documentation gaps
+   - Red flags / patterns
+6. Normalize cumulative risk to the 0-100 scale.
+7. Map the normalized score to SCORING GUIDELINES above.
 
 OUTPUT FORMAT (JSON only, no other text):
 {{
   "risk_score": <integer 0-100>,
-  "risk_reasoning": "Detailed explanation of the risk score. For scores 41+, explain SPECIFIC reasons including: which rules are at risk, exact threshold percentages, missing documentation, red flags, and suspicious indicators. Be comprehensive and specific with numbers and rule references."
+  "risk_reasoning": "Provide a detailed explanation of the risk score. For scores 41+, include SPECIFIC reasons, threshold percentages, missing documentation, red flags, and any other relevant regulatory indicators. Be quantitative and specific."
 }}
 
 IMPORTANT INSTRUCTIONS:
-- For Medium to Very High risk scores (41-100), provide DETAILED reasoning with specific rule references
-- Include exact calculations (e.g., "Amount is 92% of threshold X")
-- List ALL missing documentation and compliance gaps
-- Identify ALL suspicious patterns or red flags
-- Reference specific rule IDs from the regulatory framework
-- Be thorough - this reasoning will be used for compliance review
+- For Medium to Very High scores (41-100), reasoning must be detailed and specific.
+- Include calculations: e.g., "Transaction amount is 78% of threshold X (rule ID R-12)."
+- List ALL missing documentation and compliance gaps.
+- Identify and weight ALL suspicious patterns or red flags, specifying severity.
+- Reference specific rule IDs from the regulatory framework.
+- Avoid over-inflating scores: minor issues should not push a transaction to Very High automatically.
+- Return ONLY the JSON object with risk_score and risk_reasoning fields. No other text.
 
-Return ONLY the JSON object with risk_score and risk_reasoning fields. No additional text."""
+"""
     
     return prompt
 import json
@@ -320,7 +319,7 @@ def process_transactions(csv_file_path: str, json_file_path: str, output_file_pa
 
 # Example usage
 if __name__ == "__main__":
-    csv_file_path = 'Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/hi.csv'
+    csv_file_path = 'Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_mock_1000_for_participants.csv'
     json_file_path = 'Part 1 - AML monitoring/langchain-workflow/logs/curr_MAS_rules.json'
     output_file_path = 'Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_with_risk_scores.csv'
     

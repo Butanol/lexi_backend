@@ -40,7 +40,6 @@ Your output must **ONLY** follow this JSON schema exactly, without any additiona
 
 Below is the regulatory text to analyze:"""
 
-
 # Set up the LLM model for Groq
 validation_llm = ChatGroq(
     model="openai/gpt-oss-20b",
