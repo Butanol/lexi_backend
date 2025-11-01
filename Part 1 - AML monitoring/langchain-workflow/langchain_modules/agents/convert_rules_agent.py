@@ -4,6 +4,7 @@ import fitz  # PyMuPDF
 from langchain_groq import ChatGroq
 import re
 
+
 # Define the prompt for the model to output only the JSON
 PROMPT = """You are a senior AML/CFT Legal & Compliance Officer assisting a bank in interpreting regulatory requirements.
 
@@ -39,7 +40,6 @@ Your output must **ONLY** follow this JSON schema exactly, without any additiona
 
 Below is the regulatory text to analyze:"""
 
-# Ensure the GROQ API key is set
 
 # Set up the LLM model for Groq
 validation_llm = ChatGroq(
