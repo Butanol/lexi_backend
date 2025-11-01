@@ -1,7 +1,0 @@
-name: mas_aml_ingest
-runtime: python3
-schedule: "0 */6 * * *"   # Every 6 hours
-entrypoint: jobs/mas_ingest.py
-
-permissions:
-  - write: mas_aml_rules

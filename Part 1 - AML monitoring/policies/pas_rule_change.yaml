@@ -1,8 +1,0 @@
-on: data_change
-target: mas_aml_rules
-rules:
-  - if: version_diff > 0
-    then:
-      notify:
-        channel: slack
-        message: "⚠️ MAS Notice 626 has changed — new rules detected in mas_aml_rules."
