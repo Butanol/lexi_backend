@@ -1,0 +1,12 @@
+models:
+  openai:
+    model: "gpt-4o-mini"
+    temperature: 0
+    api_key_env: "OPENAI_API_KEY"
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed"
+
+scraping:
+  mas_notice_url: "https://www.mas.gov.sg/regulation/notices/626"
