@@ -1,0 +1,195 @@
+transaction_id,booking_jurisdiction,regulator,booking_datetime,value_date,amount,currency,channel,product_type,originator_name,originator_account,originator_country,beneficiary_name,beneficiary_account,beneficiary_country,swift_mt,ordering_institution_bic,beneficiary_institution_bic,swift_f50_present,swift_f59_present,swift_f70_purpose,swift_f71_charges,travel_rule_complete,fx_indicator,fx_base_ccy,fx_quote_ccy,fx_applied_rate,fx_market_rate,fx_spread_bps,fx_counterparty,customer_id,customer_type,customer_risk_rating,customer_is_pep,kyc_last_completed,kyc_due_date,edd_required,edd_performed,sow_documented,purpose_code,narrative,is_advised,product_complex,client_risk_profile,suitability_assessed,suitability_result,product_has_va_exposure,va_disclosure_provided,cash_id_verified,daily_cash_total_customer,daily_cash_txn_count,sanctions_screening,suspicion_determined_datetime,str_filed_datetime,risk_score,risk_reasoning
+ad66338d-b17f-47fc-a966-1b4395351b41,HK,HKMA/SFC,2024-10-10T10:24:43,10/10/2024,590012.92,HKD,RTGS,fx_conversion,Meredith Krueger,GB91GCCI85456233719196,AE,Natalie Sandoval,GB80LAUP42959382164081,CN,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-786015,corporate,Low,False,16/1/2023,15/7/2023,False,True,True,SAL,Least charge music anything wish practice.,False,False,Low,True,match,False,True,True,0.0,1,potential,,,85,"The transaction triggers several regulatory obligations and exhibits multiple compliance gaps:
+
+1. **MAS‑CDD‑01 (Full CDD for cross‑border wire > S1,500)**
+   - Amount: 590,012.92 HKD ≈ 75,600 SGD (1 SGD ≈ 7.8 HKD). 75,600 SGD is 5,040 % above the S1,500 threshold and 3,760 % above the S20,000 threshold.  The rule is therefore fully triggered.
+   - Missing documentation: KYC last completed 16/01/2023, due 15/07/2023 – KYC is overdue.  No beneficial‑owner details are provided for the corporate customer.  No address or ID number for originator/beneficiary.
+   - Impact: 100 % proximity to rule violation.
+
+2. **MAS‑WIRE‑01 (Full originator/beneficiary details)**
+   - Required: name, account number, address, ID number, and BIC for both parties.
+   - Provided: only names, account numbers, and countries.  No addresses, ID numbers, or BICs.
+   - Impact: 100 % missing critical data.
+
+3. **MAS‑WIRE‑02 (Reject/suspend if missing info)**
+   - The missing details trigger the “high‑risk” trigger for this rule.  The transaction should be investigated or suspended.
+   - Impact: 100 % compliance gap.
+
+4. **MAS‑CDD‑02 (Beneficial owner identification for legal persons)**
+   - No beneficial‑owner list or verification documents are supplied.
+   - Impact: 100 % missing requirement.
+
+5. **MAS‑STR‑01 (Suspicious Transaction Report)**
+   - Sanctions screening result is “potential”, indicating a possible sanctions hit.  This is a red flag that warrants an STR.
+   - No STR has been filed.
+   - Impact: 100 % risk of non‑filing.
+
+6. **Other red flags**
+   - Sanctions screening “potential” and KYC overdue increase the overall risk.
+   - The transaction is a large cross‑border transfer (≈ 75 k SGD) with no clear business rationale provided in the narrative.
+
+**Cumulative risk assessment**
+All five key rules are either fully triggered or have critical gaps.  The transaction is far beyond the monetary thresholds, yet the required CDD, beneficial‑owner, and wire‑transfer details are missing.  The sanctions screening potential hit adds an additional layer of suspicion.  Given the multiplicity of violations and the severity of missing documentation, the risk score is positioned in the **High‑Risk (61‑80)** range, but due to the extreme gaps and potential sanctions exposure it is pushed to **Very High (81‑100)**.  A score of **85** reflects the 100 % proximity to rule violations across multiple rules, the 100 % missing documentation, and the 100 % potential sanctions risk.
+
+**Rule references**: MAS‑CDD‑01, MAS‑WIRE‑01, MAS‑WIRE‑02, MAS‑CDD‑02, MAS‑STR‑01."
+135cef35-c054-46f0-8d8d-daedb7429de4,SG,MAS,2024-02-23T23:56:23,23/2/2024,1319007.62,GBP,SWIFT,fx_conversion,Jennifer Parker,GB39OOLA52427580832378,TH,George Brown,GB88KUDJ48147748190437,CN,,,,True,True,,,True,True,CNY,JPY,0.674205,0.673868,5,Chan-Reed,CUST-278449,domiciliary_company,Low,False,25/12/2021,23/6/2022,False,True,True,EDU,My why building or health couple record talk allow institution.,False,False,High,True,match,False,True,True,0.0,1,none,,,95,"The transaction is a large cross‑border FX conversion of GBP 1,319,007.62 (≈SGD 1.98 m) far exceeding the MAS‑CDD‑01 thresholds of S20,000 for transaction value and S1,500 for cross‑border wire transfers – 100% above each threshold.  The originator (Jennifer Parker, TH) and beneficiary (George Brown, CN) are from non‑high‑risk jurisdictions, but the customer is a domiciliary company with a *client_risk_profile* of High, triggering EDD under MAS‑CDD‑01 and MAS‑CDD‑04.  The bank’s records show KYC last completed 25/12/2021 with a due date of 23/6/2022, i.e., KYC is overdue by 1.5 years, violating the requirement for up‑to‑date CDD.  Beneficial owner details are not provided, breaching MAS‑CDD‑02.  The SWIFT message lacks ordering and beneficiary BICs, and does not include address or ID number for either party, contravening MAS‑WIRE‑01 and MAS‑WIRE‑02.  Although EDD was performed, the system flags “edd_required” as false, inconsistent with the high‑risk profile and the mandatory EDD requirement.  These multiple gaps (over‑threshold amount, overdue KYC, missing beneficial owner, incomplete SWIFT data, and inconsistent EDD flag) place the transaction at 95–99% proximity to violating several regulatory rules, warranting a Very High Risk score of 95.  The transaction should be immediately investigated, an STR filed, and all missing documentation obtained before further processing."
+f037efc0-8438-4af3-9f68-959cd9c9dcb2,CH,FINMA,2024-06-26T23:40:37,26/6/2024,233935.3,GBP,FAST (SG),wire_transfer,Nicole Guerra DVM,GB61CLBF11432797139540,VN,Candace Nichols,GB75GNZJ38259031799913,CH,MT202COV,FPLQBQHF,GYXPRCKK,True,True,Say Congress where goal address.,BEN,True,True,EUR,SGD,0.96992,0.967501,25,Perez and Sons,CUST-398810,corporate,Low,False,2/4/2023,29/9/2023,False,True,True,INV,Fish analysis billion threat hear daughter send say what.,False,False,Low,True,match,False,True,True,0.0,1,potential,,,95,"The transaction triggers several regulatory requirements with significant compliance gaps:
+
+1. **MAS‑CDD‑01** – The cross‑border wire transfer of 233,935.3 GBP (~257,300 CHF) far exceeds the S20,000 threshold (1285% of the limit). Full CDD is mandatory, yet the customer’s KYC is overdue (last completed 02/04/2023, due 29/09/2023) and no beneficial‑owner information is provided. This constitutes a 100 % breach of the rule.
+
+2. **MAS‑CDD‑02** – As a corporate customer, the bank must identify and verify all beneficial owners. The transaction record contains no such details, representing a 100 % violation.
+
+3. **MAS‑WIRE‑01** – The rule requires the originator and beneficiary’s name, account number, address, and ID number. While names and account numbers are present, the address and ID number are missing, a 100 % shortfall.
+
+4. **MAS‑WIRE‑02** – Missing address/ID triggers the requirement to reject, suspend, or investigate the transfer and file an STR if suspicious. No STR has been filed, indicating a 100 % compliance gap.
+
+5. **Sanctions Screening** – The screening result is “potential,” signalling a possible sanctions hit. This red flag alone warrants heightened scrutiny and is treated as a 100 % risk factor.
+
+6. **Other Controls** – The transaction is not flagged for EDD (edd_required=false) but EDD was performed, which is acceptable for a low‑risk customer. However, the lack of a documented risk assessment and the absence of a senior‑management approval for the high‑value transfer add to the risk profile.
+
+Cumulative effect: Multiple 100 % rule breaches plus a high‑value transaction (over 12× the CDD threshold) push the overall risk into the very high range. Therefore, a risk score of **95** is assigned, reflecting the near‑maximum proximity to regulatory violations and the presence of several critical documentation gaps and red flags.
+"
+f7589c12-dccb-4ae1-8ad3-324db3316a56,HK,HKMA/SFC,2024-05-03T00:08:29,3/5/2024,1778002.31,GBP,SEPA,fx_conversion,Jeremy Williams,GB56TQOT03483189875583,AU,Connor Smith,GB19HQGX56751391902097,US,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-337880,individual,Low,False,29/1/2021,28/7/2021,False,True,True,TAX,Behind billion security film of magazine with forward morning music.,False,False,Balanced,True,match,False,True,True,0.0,1,none,,,95,"The transaction triggers several regulatory obligations with significant gaps:
+
+1. **MAS-CDD-01** – The transaction amount (GBP 1,778,002.31) far exceeds the S20,000 threshold (8890% of the limit) and is a cross‑border wire transfer, which triggers the S1,500 threshold (118,533% of the limit). Full CDD is required, but the customer’s KYC is expired (last completed 29/01/2021, due 28/07/2021) and no current identity documents, address or ID number are provided. This is a clear violation.
+
+2. **MAS-WIRE-01** – The wire transfer message must include the originator’s and beneficiary’s address and ID number. Only names and account numbers are present; address and ID number are missing, violating the rule.
+
+3. **MAS-WIRE-02** – Because the required originator/beneficiary details are incomplete, the transfer should be rejected, suspended, or investigated, and an STR filed if suspicious. No STR has been filed.
+
+4. **MAS-CDD-05** – Although the customer is rated low risk, rule 01 overrides simplified CDD for any transaction over S20,000. Simplified CDD is therefore insufficient.
+
+5. **Missing Documentation** – No ID documents, address proof, or ID numbers are attached; KYC is outdated; no source‑of‑wealth or source‑of‑funds documentation is shown.
+
+6. **Cumulative Risk** – Multiple rule breaches (CDD, wire‑transfer details, outdated KYC) combine to create a very high risk profile. The transaction is 100% close to violating thresholds and has several critical compliance gaps.
+
+Given the severity of the violations and the high proximity to regulatory thresholds, a risk score of 95 is assigned, placing the transaction in the ""Very High Risk"" category (81‑100)."
+66f1c2c5-6585-40e9-9b9d-4ec10c6fdbae,SG,MAS,2024-12-03T13:58:10,3/12/2024,2479099.4,HKD,RTGS,fx_conversion,Mr. John Turner MD,GB30TZUH89833514426746,HK,Roy Rodriguez,GB60ORBY07341123489694,DE,,,,True,True,,,True,True,SGD,CHF,1.354146,1.352118,15,Dean-Lowery,CUST-971549,individual,Low,True,20/10/2023,19/10/2024,True,True,True,TAX,Movement success popular senior whole buy similar.,False,False,High,True,match,False,True,True,0.0,1,potential,,,85,"The transaction triggers several high‑risk regulatory requirements and contains multiple compliance gaps:
+
+1. **MAS‑CDD‑01 (Cross‑border wire > S1,500)** – The amount is 2,479,099.4 HKD (~321,000 SGD), which is 21,400 % above the S1,500 threshold.  Full CDD is mandatory and EDD is required for a PEP.  While EDD is marked as performed, the record lacks evidence of:
+   - Originator and beneficiary ID numbers (required for identity verification)
+   - Beneficial owner details (the PEP is the owner, but source‑of‑wealth documentation is missing)
+   - Senior‑management approval for a high‑risk customer
+   - Risk‑assessment documentation
+   These omissions mean the CDD is incomplete, raising a high‑risk flag.
+
+2. **MAS‑WIRE‑01 & MAS‑WIRE‑02 (Originator/Beneficiary details)** – The SWIFT message includes F50 and F59 but does not contain the required ID numbers for either party.  MAS‑WIRE‑01 mandates full originator and beneficiary information; MAS‑WIRE‑02 requires investigation or STR filing when information is missing.  The absence of ID numbers is a critical compliance gap.
+
+3. **MAS‑CDD‑03 (PEP EDD)** – The customer is a PEP and the transaction is high value.  EDD must include:
+   - Senior‑management approval (missing)
+   - Source‑of‑wealth and source‑of‑funds documentation (missing)
+   - Enhanced ongoing monitoring plan (not documented)
+   The record shows only that EDD was performed, but the key supporting documents are absent.
+
+4. **MAS‑STR‑01 (Suspicious Transaction Report)** – Sanctions screening returned a “potential” hit.  Under MAS‑STR‑01, any suspicious transaction must be reported to STRO.  No STR has been filed, creating a regulatory breach.
+
+5. **High‑risk customer profile** – The customer is a PEP with a high‑risk profile, and the transaction is large and cross‑border.  Even though EDD was performed, the missing documentation and potential sanctions hit elevate the risk.
+
+**Proximity to thresholds**: The transaction amount is 21,400 % above the cross‑border wire threshold, indicating a very high exposure.  The missing ID numbers and sanctions hit represent critical compliance failures.
+
+Given the combination of a very large transaction, PEP status, missing essential CDD/WIRE documentation, and a potential sanctions hit, the overall risk is classified as **Very High (85)**."
+15ce0bc5-e37b-4279-90ee-e5d289713d46,SG,MAS,2024-06-02T12:05:23,2/6/2024,1991250.25,CHF,SEPA,fund_subscription,Kimberly Rogers,GB60UEDX03084750618054,US,Becky Bass,GB72ZEFA84705917257543,TH,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-314021,corporate,Medium,False,10/10/2022,10/10/2023,False,True,True,LEA,Four cover improve leave career issue world hot police with.,False,True,Low,True,match,True,False,True,0.0,1,none,,,90,"The transaction triggers several regulatory thresholds and documentation gaps that collectively elevate the risk to a very high level. 1) **MAS-CDD-01** – The amount of CHF 1,991,250.25 far exceeds the S20,000 threshold (≈9,956% of the threshold), mandating full CDD and EDD. 2) **MAS-CDD-02** – As a corporate customer, the beneficial owner details are missing; the rule requires a list of ultimate beneficial owners with ID and address, which is not provided. 3) **MAS-WIRE-01** – The wire transfer lacks critical information: originator and beneficiary addresses, ID numbers, and BICs. The rule requires these details for all cross‑border transfers. 4) **MAS-WIRE-02** – Because of the missing information, the transfer is automatically flagged for investigation or STR filing; no STR has been filed yet. 5) **MAS-CDD-05** – The customer is rated Medium risk, so simplified CDD is not permissible; full CDD is required but not fully documented (beneficial owner, address, ID). 6) **MAS-REC-01** – While record retention is not explicitly violated, the incomplete documentation raises concerns about compliance with the 5‑year retention requirement. 7) **MAS-STR-01** – No STR has been filed despite the missing data and high transaction amount, which could be considered suspicious. 8) **MAS-MON-01** – The product is complex and the transaction is large; ongoing monitoring is not demonstrated. The cumulative effect of these gaps and the extreme proximity to the S20,000 threshold (99.56×) places the transaction in the 81‑100 risk band, resulting in a risk score of 90. "
+ab58ad97-aef7-49bf-a177-60f1e2d6c797,CH,FINMA,2024-02-21T21:07:34,21/2/2024,299182.31,CNY,FAST (SG),securities_trade,Glenn Graham,GB18FCDE63247865245111,HK,Jason Herman MD,GB55AUUF48704717868696,JP,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-765698,domiciliary_company,Low,False,19/1/2021,19/1/2023,False,True,True,MED,Thank never ability edge rate stage summer again.,False,False,Balanced,True,match,False,True,True,0.0,1,none,,,90,"The transaction triggers several regulatory requirements and contains multiple compliance gaps:
+
+1. **MAS‑CDD‑01 (Full CDD for >S20,000)** – The amount is 299,182.31 CNY ≈ 46,000 SGD, which is 230 % of the S20,000 threshold. The transaction was executed without a current KYC (last completed 19/01/2021, due 19/01/2023) and without a documented beneficial‑owner list for the domiciliary company. This is a clear violation of the rule.
+
+2. **MAS‑CDD‑02 (Beneficial‑owner verification for legal persons)** – The customer is a domiciliary company; the record shows no beneficial‑owner details, no trust deeds, and no verification of ownership/control. This omission violates the requirement.
+
+3. **MAS‑WIRE‑01 (Full originator/beneficiary details on cross‑border wire)** – The message lacks originator and beneficiary addresses and ID numbers, and the BICs for both ordering and beneficiary institutions are missing. The SWIFT MT is null, so the required originator/beneficiary information is incomplete. This is a direct breach of the rule.
+
+4. **MAS‑WIRE‑02 (Investigation/rejection for missing info)** – Because the required details are missing, the transfer should have been investigated or suspended, and an STR filed if suspicious. No STR has been filed.
+
+5. **MAS‑CDD‑05 (Simplified CDD only for low‑risk customers)** – Although the customer is rated low risk, the KYC is expired and the beneficial‑owner information is missing, so simplified CDD is insufficient.
+
+6. **Other gaps** – No sanctions screening hits, but the lack of updated KYC and missing BICs increase the risk of money‑laundering or terrorism‑financing exposure.
+
+**Risk calculation** – Each major gap (KYC expiry, missing beneficial‑owner, missing address/ID, missing BICs, missing SWIFT MT) contributes roughly 15‑20 % to the overall risk. Combined, these gaps push the transaction into the 81‑100 % proximity band, resulting in a high risk score of 90.
+
+The transaction therefore poses a very high compliance risk due to multiple rule violations and missing documentation."
+0dc32466-81f2-4749-8cc7-964c79d0f008,HK,HKMA/SFC,2024-06-14T00:18:25,14/6/2024,9428.14,GBP,Cash,cash_deposit,Michael Bennett,GB30HXVR68088439228730,IR,Vanessa Kim,GB86PGCT62374347986076,TH,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-790068,individual,Low,False,10/11/2020,10/11/2022,False,True,True,EDU,Onto serious deal federal say six certain anything born.,False,False,High,True,match,False,True,True,30585.96,5,potential,,,90,"The transaction triggers several high‑risk compliance gaps:
+
+1. **MAS‑CDD‑04 (High‑risk jurisdiction)** – The originator is from Iran, a FATF‑listed high‑risk jurisdiction. The rule mandates EDD for any customer from such a jurisdiction. The system flags `edd_required:false` but `edd_performed:true`. The requirement is still unmet because the rule explicitly states EDD is mandatory; the flag is inconsistent with the regulation. This represents a 100 % breach of the threshold.
+
+2. **MAS‑CDD‑05 (Simplified CDD only for low‑risk customers)** – The customer’s risk rating is “Low” but the client risk profile is “High” and sanctions screening is “potential.” Simplified CDD is only permissible for truly low‑risk customers with no sanctions or adverse media hits. The contradictory risk profile and potential sanctions hit mean the simplified approach is inappropriate, constituting a 100 % violation.
+
+3. **MAS‑STR‑01 (Suspicious Transaction Report)** – Sanctions screening returned a “potential” hit and the KYC is expired (due 10/11/2022). No STR has been filed (`str_filed_datetime:null`). The rule requires a prompt STR for any suspicious activity regardless of amount. This is a 100 % breach.
+
+4. **KYC Expiry** – The last KYC was completed on 10/11/2020 and is now expired. The regulation requires up‑to‑date CDD for all customers. This is a 100 % compliance gap.
+
+5. **Daily Cash Total** – The customer’s daily cash total is 30,585.96 GBP, exceeding the typical daily cash deposit threshold of 20,000 GBP (if applicable). This is a 100 % threshold breach.
+
+6. **Missing Documentation** – The transaction lacks:
+   - Source of wealth and source of funds documentation (required for EDD).
+   - Senior management approval for high‑risk customers.
+   - Risk assessment documentation for the high‑risk jurisdiction.
+   - Confirmation that the originator’s and beneficiary’s identities have been verified against the latest sanctions lists.
+
+7. **Red Flags** – The combination of an Iranian originator, expired KYC, potential sanctions, and a high daily cash total creates a high‑risk profile. The transaction is not near the 20,000 GBP threshold for MAS‑CDD‑01, but the other factors dominate.
+
+Given the cumulative impact of these gaps—four 100 % rule breaches, a 100 % KYC expiry, a 100 % daily cash threshold breach, and missing critical documentation—the overall risk is very high. The score of 90 reflects the near‑maximum proximity to multiple regulatory violations and the presence of several critical compliance failures."
+e8db37cf-2a87-404b-af55-bc48ed06a1e1,SG,MAS,2025-01-26T12:14:06,26/1/2025,1246895.32,HKD,FPS (HK),fund_subscription,Jimmy Hart,GB37PMHN24174670808707,RU,Michael White,GB72ISXP89877669817370,RU,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-351699,domiciliary_company,Medium,False,25/3/2024,25/3/2026,False,True,True,INV,Democratic and street heavy foreign become member north pick.,False,True,High,True,match,False,True,True,0.0,1,potential,,,90,"The transaction is very close to violating multiple MAS rules and has several critical compliance gaps:
+
+1. **MAS‑CDD‑01** – The amount (1,246,895.32 HKD ≈ 159,000 SGD) is 100 % above the S20,000 threshold for full CDD. The transaction also exceeds the S1,500 cross‑border wire threshold, triggering EDD. 100 % of the threshold is reached.
+2. **MAS‑CDD‑04** – Both originator and beneficiary are from Russia, a FATF‑listed high‑risk jurisdiction. EDD is mandatory; although EDD is marked as performed, no supporting documentation (senior‑management approval, source‑of‑funds verification, country‑risk assessment) is provided.
+3. **MAS‑CDD‑02** – The customer is a domiciliary company; the beneficial‑owner details are not supplied. This omission violates the requirement to identify and verify ultimate beneficial owners for legal persons.
+4. **MAS‑WIRE‑01** – The wire message lacks originator/beneficiary address and ID number, and both ordering and beneficiary BICs are null. The rule requires full originator and beneficiary information; missing data is a critical gap.
+5. **MAS‑WIRE‑02** – Because of the missing information, the transfer should be rejected, suspended, or investigated, and an STR should be filed if suspicious. No STR has been filed.
+6. **MAS‑STR‑01** – Sanctions screening shows a “potential” hit. Under MAS‑STR‑01, any transaction suspected of money‑laundering or terrorism financing must be reported. The absence of an STR filing is a direct violation.
+7. **MAS‑MON‑01** – The product is complex and the client risk profile is high. Ongoing monitoring is required to detect unusual patterns; no evidence of such monitoring is presented.
+8. **Missing documentation** – Beneficial‑owner list, address/ID for originator/beneficiary, BICs, senior‑management approval for EDD, and STR filing are all absent.
+
+Cumulatively, the transaction violates at least six regulatory requirements, has multiple documentation gaps, and is 100 % above key thresholds. According to the scoring guidelines, this places the transaction in the 81‑100 Very High Risk band, resulting in a risk score of 90.
+"
+5a5ba79d-09f6-46ba-bc74-e715f721ec34,CH,FINMA,2024-10-29T23:23:38,29/10/2024,20000.0,CHF,FPS (HK),cash_deposit,Johnathan Arroyo,GB87LHNX15336217030570,CN,Thomas Thomas,GB53PNBY13656877808614,VN,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-352944,domiciliary_company,Low,False,10/4/2021,10/4/2022,False,True,True,GDS,Hope letter production wind special discuss boy man black audience.,False,False,Low,True,match,False,True,False,0.0,1,none,,,90,"The transaction triggers several regulatory requirements and contains multiple documentation gaps, leading to a very high risk assessment.
+
+1. **MAS‑CDD‑01 (Cross‑border wire transfer threshold)** – The transfer is cross‑border (originator CN, beneficiary VN) and exceeds the S1,500 threshold by 20,000/1,500 = 13.33× (1333 % of the threshold). The rule requires full CDD, beneficial‑owner identification, and risk assessment for such transfers. The customer’s KYC is overdue (last completed 10/4/2021, due 10/4/2022) and no current CDD documents (ID card, proof of address, beneficial‑owner details) are provided. **Proximity to threshold: 100 %**.
+
+2. **MAS‑CDD‑02 (Beneficial‑owner verification for legal persons)** – The customer is a domiciliary company. The transaction lacks a list of ultimate beneficial owners, their IDs, and verification of ownership/control. **Missing documentation: 100 %**.
+
+3. **MAS‑WIRE‑01 (Full originator/beneficiary details)** – The wire message includes name and account number but omits address and ID number for both parties, which the rule mandates. **Missing details: 100 %**.
+
+4. **MAS‑WIRE‑02 (Investigation/rejection for incomplete information)** – Because the required address and ID number are missing, the transfer falls under the rule’s trigger for investigation or STR filing. **Risk trigger: 100 %**.
+
+5. **MAS‑CDD‑05 (Simplified CDD for low‑risk customers)** – Although the customer is rated low risk, the presence of overdue KYC and missing beneficial‑owner data means simplified CDD is insufficient. **Compliance gap: 100 %**.
+
+6. **Other considerations** – The transaction is exactly at the S20,000 threshold for MAS‑CDD‑01 (amount threshold), but the rule applies to amounts *exceeding* S20,000, so it is not triggered by the amount alone. However, the cross‑border nature activates the rule. No STR has been filed, but the missing information and overdue KYC would likely trigger an STR under MAS‑STR‑01.
+
+**Cumulative risk**: Four distinct rule violations (MAS‑CDD‑01, MAS‑CDD‑02, MAS‑WIRE‑01, MAS‑WIRE‑02) plus a significant documentation shortfall (KYC, beneficial‑owner, address/ID). The transaction is far beyond the safe‑harbor thresholds and lacks critical compliance controls, placing it in the 81‑100 risk band. A score of 90 reflects the near‑maximum proximity to multiple regulatory breaches and the severity of the documentation gaps.
+"
+db78512e-524f-41df-ae9c-d254556670f9,CH,FINMA,2024-10-31T20:04:17,31/10/2024,10238.77,JPY,Cash,cash_deposit,Joel Lee,GB74FECV89302934898235,CN,Austin Thomas,GB02DFXV28349051210823,CN,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-956783,domiciliary_company,Medium,False,5/11/2019,4/11/2020,False,True,True,MED,Expect walk simple focus fall.,False,False,Low,True,match,False,True,False,30496.46,5,potential,2024-11-01T00:04:17,2024-11-01T06:04:17,70,"The transaction is evaluated against the MAS Notice 626 regulatory framework. 1) **Rule MAS-CDD-02** – Beneficial owner information is required for a legal person (domiciliary company).  The record contains no beneficial owner details, a 100 % compliance gap. 2) **Rule MAS-CDD-05** – The customer is rated Medium risk, yet only basic KYC was completed (last completed 5/11/2019, due 4/11/2020).  The KYC is 100 % overdue, another critical gap. 3) **Sanctions screening** – The screening result is “potential”, indicating a 100 % red‑flag for possible sanctions or adverse media. 4) **Rule MAS-CDD-01** – The transaction amount (10 238.77 JPY ≈ 70 SGD) is 0 % of the S20 000 threshold, so no CDD trigger here. 5) **Rule MAS-CDD-06** – Not a digital token transaction, so no EDD trigger. 6) **Rule MAS-WIRE-01/02** – Not a wire transfer, so no wire‑specific requirements. 7) **Rule MAS-MON-01** – The daily cash total (30 496.46 JPY) is modest and does not trigger the monitoring thresholds. 8) **Rule MAS-STR-01** – An STR was filed, indicating that the transaction was deemed suspicious.  The combination of missing beneficial owner data, overdue KYC, sanctions potential, and an STR filing places the transaction in the **High‑Risk** band (61‑80).  The score of 70 reflects the cumulative impact of these gaps and red flags, while the transaction amount is far below the CDD thresholds, keeping the risk from reaching the Very‑High band."
+c8c71f9b-6aee-4308-afec-a4a454297924,HK,HKMA/SFC,2024-01-03T15:29:41,3/1/2024,1891975.54,CHF,RTGS,wire_transfer,Janet Woods,GB49LNMI66369007439229,AU,Michael Barrett,GB71FXXC55074187388738,US,MT103,,,False,True,,,True,False,,,0.0,0.0,0,,CUST-147136,domiciliary_company,Low,False,8/5/2023,4/11/2023,False,True,True,SVC,Drug knowledge subject travel western drug message.,False,False,Balanced,True,match,False,True,True,0.0,1,none,,,100,"The transaction triggers multiple regulatory failures and red‑flags:
+
+1. **MAS‑CDD‑01 (Full CDD for cross‑border wire > S1,500)** – The amount is 1,891,975.54 CHF (~17 M HKD), 1,133 % above the S1,500 threshold. Full CDD (identity, beneficial owner, risk assessment) is required but not documented. 100 % of the threshold risk.
+2. **MAS‑CDD‑02 (Beneficial owner identification for legal persons)** – The customer is a domiciliary company; no beneficial owner details are provided. 100 % missing.
+3. **MAS‑WIRE‑01 (Full originator/beneficiary details)** – The SWIFT message lacks address and ID numbers for both parties. 100 % missing.
+4. **MAS‑WIRE‑02 (Investigation/STR for incomplete transfer info)** – Because of the missing data, the transfer should be investigated or suspended and an STR filed. No STR has been filed. 100 % missing.
+5. **MAS‑STR‑01 (Suspicious transaction reporting)** – The narrative “Drug knowledge subject travel western drug message” indicates suspicious activity. No STR has been filed. 100 % missing.
+6. **MAS‑CDD‑05 (Simplified CDD not allowed for > S1,500)** – Simplified CDD is insufficient for this transaction. 100 % risk.
+
+Cumulative effect: 6 independent failures each contributing 100 % of their respective risk thresholds, resulting in a maximum risk score of 100. The transaction is therefore **Very High Risk** under the provided regulatory framework."
+a4684bb0-fc13-4d3f-9588-8adef7ca59a7,HK,HKMA/SFC,2024-12-02T16:55:57,2/12/2024,5125.04,USD,Cash,cash_deposit,Misty Perez,GB41OFQE91693625782000,AE,Angela Tucker,GB31XGJQ34441659993977,CN,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-804879,individual,Low,False,17/3/2022,13/9/2022,False,True,True,TAX,Pressure travel here plan least.,False,False,Balanced,True,match,False,True,True,5125.04,1,potential,,,35,"The transaction amount of USD 5,125.04 is only 25.6% of the MAS‑CDD‑01 threshold of S20,000, well below the 50% threshold range for low risk. The customer is classified as low risk, not a PEP, and neither the originator (AE) nor the beneficiary (CN) are from FATF high‑risk jurisdictions, so MAS‑CDD‑04 and MAS‑CDD‑03 do not apply. The transaction is a cash deposit, not a wire transfer or digital token transaction, so MAS‑WIRE‑01/02 and MAS‑CDD‑06 are not triggered. However, there are compliance gaps: the customer’s KYC is overdue (last completed 17/3/2022, due 13/9/2022), and the sanctions screening result is “potential”, indicating a possible sanctions hit. These gaps could trigger enhanced due diligence (EDD) under MAS‑CDD‑05 and MAS‑STR‑01 if further investigation is required. No other regulatory thresholds are near being breached, and no suspicious transaction patterns are evident. Overall, the transaction is low risk but not very low due to the overdue KYC and potential sanctions hit, hence a score of 35."
+6cd9732b-3d00-4d7d-86f1-3d6ec9a6e3fe,HK,HKMA/SFC,2024-03-12T04:29:07,12/3/2024,12396.34,USD,Cash,cash_deposit,Carly Leon,GB54RZWQ60009826935393,GB,Christopher Davis,GB57WHSC05781778493220,AU,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-684293,individual,Low,False,24/2/2023,23/2/2025,False,True,True,FAM,Quickly there impact social institution phone never only name camera.,False,False,Balanced,True,match,False,True,True,20961.63,3,none,,,30,"The transaction amount of USD 12,396.34 is 61.98% of the S20,000 threshold in MAS‑CDD‑01 (the rule that triggers full CDD/EDD for transactions exceeding S20,000). Because the amount is below the threshold, no enhanced due diligence is required. The customer is a low‑risk individual, not a PEP, and is not from a high‑risk jurisdiction, so MAS‑CDD‑05 (simplified CDD) applies and is satisfied (KYC completed, cash ID verified, SOW documented). No digital token, wire transfer, or cross‑border transfer rules are triggered. The daily cash total of USD 20,961.63 is 104.8% of the S20,000 threshold, but this threshold applies to individual transactions, not cumulative daily totals, so it does not create a compliance trigger. All required documentation (ID, address, KYC, SOW) is present, and there are no sanctions hits or suspicious patterns. Therefore the transaction is far from violating any regulatory rule, falling into the “Low Risk” band (21‑40) with a score of 30. No missing critical compliance requirements or red flags are identified."
+64bb8290-aa28-4e81-9f62-e32a84a609f8,HK,HKMA/SFC,2024-09-17T18:24:16,17/9/2024,16571.13,CHF,Cash,cash_deposit,Mr. Benjamin Cox II,GB97NVCX37168651798962,AU,Kimberly James,GB14UGGH54357205828956,TH,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-863436,domiciliary_company,High,False,24/7/2021,24/7/2022,True,True,True,GDS,Kitchen spring area laugh film.,False,False,Balanced,True,match,False,True,True,16571.13,1,none,,,83,"The transaction is a cash deposit of CHF 16,571.13, which is 82.86 % of the MAS‑CDD‑01 threshold of S20,000 for full CDD. The customer is a domiciliary company with a high risk rating, and the KYC was last completed on 24/07/2021 with a due date of 24/07/2022 – i.e., 1 year overdue, which is a significant compliance gap. Under MAS‑CDD‑02, a legal person must have its beneficial owners identified and verified; the transaction record does not contain any beneficial owner details, constituting a missing requirement. Although EDD has been performed (edd_performed:true), the absence of documented beneficial owner information and the overdue KYC still trigger high‑risk flags. No STR has been filed, and the transaction is not a wire or digital token transaction, so MAS‑WIRE‑01/02 and MAS‑CDD‑06 do not apply. The travel rule is marked complete, but that does not mitigate the missing CDD elements. Summing the risk contributions: 82.86 % (amount threshold proximity) + 100 % (missing beneficial owner) + 100 % (overdue KYC) + 100 % (high‑risk customer) = 382.86 %. EDD performed reduces risk by roughly 50 %, yielding an adjusted score of ~83, placing the transaction in the Very High Risk band (81‑100)."
+015e2202-1c97-4f0f-9756-2c8fc85e7ac9,SG,MAS,2025-04-03T00:46:51,3/4/2025,1267232.73,JPY,SWIFT,fx_conversion,Jennifer Miller,GB55RJLD30524097771026,JP,Justin Bryant,GB97TCRH80003638403916,VN,,,,True,True,,,True,False,,,0.0,0.0,0,,CUST-110107,individual,High,True,14/12/2023,11/6/2024,True,True,True,EDU,Reason offer discover service.,False,False,High,True,match,False,True,True,0.0,1,potential,,,90,"The transaction triggers several MAS rules and has multiple compliance gaps:
+
+1. **MAS-WIRE-01 & MAS-WIRE-02** – The cross‑border wire (JP→VN) is 5,456 SGD, which is 364 % of the S1,500 threshold.  The SWIFT message contains the originator and beneficiary names and account numbers but lacks **address and ID number** for both parties.  This missing information triggers MAS‑WIRE‑02 (investigation/STR) and is a critical compliance gap.
+
+2. **MAS‑CDD‑01** – The transaction exceeds the S1,500 cross‑border wire threshold, so full CDD is mandatory.  The file shows that EDD was performed, but there is no evidence of:
+   - Customer identification documents (ID card/passport)
+   - Proof of address
+   - Senior‑management approval for a high‑risk customer
+   These omissions constitute a failure to meet the required controls.
+
+3. **MAS‑CDD‑03** – The customer is a PEP.  EDD is required and has been performed, yet the file lacks:
+   - Source‑of‑wealth documentation
+   - Source‑of‑funds documentation
+   - Senior‑management approval to continue the relationship
+   The absence of these documents is a critical shortfall.
+
+4. **MAS‑STR‑01** – Sanctions screening returned a “potential” hit and no STR has been filed.  This is a direct violation of the STR filing obligation.
+
+5. **Other gaps** – The transaction is marked as high risk, yet the KYC was last completed on 14/12/2023 and is due 11/6/2024.  The KYC is still within the due period, but the presence of a PEP and high‑risk jurisdiction (beneficiary in VN) increases the risk profile.
+
+**Threshold proximity** – The amount is 364 % of the S1,500 wire threshold, far exceeding the threshold but still triggering the rule.  The missing documentation and potential sanctions hit push the risk into the very high range.
+
+Given the multiple rule violations, missing critical documentation, and the high‑risk customer profile, the transaction is assigned a risk score of **90** (very high risk)."

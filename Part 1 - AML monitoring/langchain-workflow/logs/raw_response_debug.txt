@@ -1,0 +1,90 @@
+{
+  "actionable_rules": [
+    {
+      "rule_id": "MAS-CDD-01",
+      "obligation": "Perform Customer Due Diligence (CDD) measures on all customers, including identifying and verifying the identity of the customer, connected parties, and beneficial owners.",
+      "who_it_applies_to": "All customers, including individuals, legal persons, and legal arrangements.",
+      "risk_signals_to_monitor": [
+        "Transactions exceeding S$20,000 or S$1,500 for wire transfers",
+        "Suspicious or complex transactions",
+        "Customers from high-risk countries or jurisdictions"
+      ],
+      "required_documents_or_controls": [
+        "Obtain and verify customer identification documents, such as ID cards, passports, or business registration certificates",
+        "Verify the customer's address and date of birth",
+        "Obtain information about the customer's business and ownership structure"
+      ],
+      "requires_edd": "Yes, for customers from high-risk countries or jurisdictions, or where the bank suspects money laundering or terrorism financing"
+    },
+    {
+      "rule_id": "MAS-CDD-02",
+      "obligation": "Perform Enhanced Due Diligence (EDD) measures on politically exposed persons (PEPs) and their family members or close associates.",
+      "who_it_applies_to": "PEPs, their family members, or close associates",
+      "risk_signals_to_monitor": [
+        "PEPs or their family members or close associates",
+        "Transactions exceeding S$20,000 or S$1,500 for wire transfers",
+        "Suspicious or complex transactions"
+      ],
+      "required_documents_or_controls": [
+        "Obtain approval from senior management to establish or continue business relations with PEPs or their family members or close associates",
+        "Verify the source of wealth and source of funds of PEPs or their family members or close associates",
+        "Conduct enhanced monitoring of business relations with PEPs or their family members or close associates"
+      ],
+      "requires_edd": "Yes"
+    },
+    {
+      "rule_id": "MAS-CDD-03",
+      "obligation": "Perform Simplified CDD measures on customers where the bank is satisfied that the risks of money laundering and terrorism financing are low.",
+      "who_it_applies_to": "Customers where the bank is satisfied that the risks of money laundering and terrorism financing are low",
+      "risk_signals_to_monitor": [
+        "Customers from low-risk countries or jurisdictions",
+        "Transactions below S$20,000 or S$1,500 for wire transfers"
+      ],
+      "required_documents_or_controls": [
+        "Obtain and verify customer identification documents, such as ID cards, passports, or business registration certificates",
+        "Verify the customer's address and date of birth"
+      ],
+      "requires_edd": "No"
+    },
+    {
+      "rule_id": "MAS-WT-01",
+      "obligation": "Include wire transfer originator and beneficiary information in the message or payment instruction accompanying the wire transfer.",
+      "who_it_applies_to": "All wire transfers, including cross-border and domestic wire transfers",
+      "risk_signals_to_monitor": [
+        "Wire transfers lacking required wire transfer originator or wire transfer beneficiary information",
+        "Suspicious or complex transactions"
+      ],
+      "required_documents_or_controls": [
+        "Obtain and verify wire transfer originator and beneficiary information",
+        "Record adequate details of the wire transfer"
+      ],
+      "requires_edd": "No"
+    },
+    {
+      "rule_id": "MAS-VT-01",
+      "obligation": "Include value transfer originator and beneficiary information in the message or payment instruction accompanying the value transfer.",
+      "who_it_applies_to": "All value transfers, including cross-border and domestic value transfers",
+      "risk_signals_to_monitor": [
+        "Value transfers lacking required value transfer originator or value transfer beneficiary information",
+        "Suspicious or complex transactions"
+      ],
+      "required_documents_or_controls": [
+        "Obtain and verify value transfer originator and beneficiary information",
+        "Record adequate details of the value transfer"
+      ],
+      "requires_edd": "No"
+    },
+    {
+      "rule_id": "MAS-RR-01",
+      "obligation": "Develop and implement adequate internal policies, procedures, and controls to prevent money laundering and terrorism financing.",
+      "who_it_applies_to": "All banks",
+      "risk_signals_to_monitor": [
+        "Suspicious or complex transactions",
+        "Customers from high-risk countries or jurisdictions"
+      ],
+      "required_documents_or_controls": [
+        "Develop and implement group policy on AML/CFT",
+        "Develop and implement compliance management arrangements",
+        "Develop and implement audit function"
+      ],
+      "requires_edd":

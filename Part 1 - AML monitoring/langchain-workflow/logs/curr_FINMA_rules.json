@@ -1,0 +1,79 @@
+{
+    "regulationsummary": "Banks must prepare a written moneylaundering risk analysis that identifies, records, analyzes and measures all risks related to their business activities and customer relationships The analysis must cover risk categories such as client domicile, segment, productsservices and geography, and must define a risk tolerance with limits, key risk indicators and an exception process The analysis must be reviewed, updated and approved by senior management, integrated into the compliance risk assessment, and, for banks with international operations, repeated at a consolidated level Enhanced due diligence is required for any risk category that exceeds the defined tolerance or triggers a key risk indicator",
+    "actionablerules": [
+        {
+            "ruleid": "FINMA-RISK-01",
+            "obligation": "Prepare a written moneylaundering risk analysis that records, analyzes and measures each identified risk category client domicile, segment, productsservices, geography",
+            "whoitappliesto": "All banking institutions, including subsidiaries and foreign group companies",
+            "risksignalstomonitor": [
+                "New or increased exposure to highrisk jurisdictions or client segments",
+                "Introduction of new products or services that have higher inherent risk"
+            ],
+            "requireddocumentsorcontrols": [
+                "Risk analysis document with risk categories, inherent risk assessment, control risk description, net risk calculation, and key figures",
+                "Evidence of data sources used for risk assessment eg, client onboarding data, transaction monitoring reports"
+            ],
+            "requiresedd": "No, but the analysis must flag categories that require EDD"
+        },
+        {
+            "ruleid": "FINMA-RISK-02",
+            "obligation": "Define a risk tolerance for each risk category, set quantitative limits, and establish key risk indicators KRIs to monitor compliance with the tolerance",
+            "whoitappliesto": "All banking institutions, with specific KRIs for highrisk client segments and jurisdictions",
+            "risksignalstomonitor": [
+                "Percentage of highrisk clients exceeding the tolerance threshold",
+                "Number of transactions from highrisk jurisdictions above the set limit"
+            ],
+            "requireddocumentsorcontrols": [
+                "Risk tolerance statement with defined limits",
+                "KRI dashboard showing realtime compliance status",
+                "Approval log from the board or executive committee"
+            ],
+            "requiresedd": "Yes, if a KRI indicates that exposure to a highrisk category is above tolerance, EDD must be triggered"
+        },
+        {
+            "ruleid": "FINMA-RISK-03",
+            "obligation": "Implement an exception process that allows the executive board to approve individual cases that fall outside the defined risk tolerance, after risk mitigation measures are defined and monitored",
+            "whoitappliesto": "All highrisk client relationships or transactions that would otherwise breach the risk tolerance",
+            "risksignalstomonitor": [
+                "Requests for highrisk client onboarding or transaction approvals",
+                "Instances where a clients risk profile changes to a higher category"
+            ],
+            "requireddocumentsorcontrols": [
+                "Exception request form detailing the risk, mitigation plan, and approval",
+                "Board minutes approving the exception",
+                "Ongoing monitoring plan for the exception"
+            ],
+            "requiresedd": "Yes, the exception must include an EDD plan for the specific client or transaction"
+        },
+        {
+            "ruleid": "FINMA-RISK-04",
+            "obligation": "Periodically review, update, and obtain board approval of the risk analysis, ensuring that changes in business strategy, client base or product offerings are reflected",
+            "whoitappliesto": "All banking institutions, with a review cycle of at least annually",
+            "risksignalstomonitor": [
+                "Significant changes in the composition of the client portfolio",
+                "Launch of new products or services that alter inherent risk"
+            ],
+            "requireddocumentsorcontrols": [
+                "Updated risk analysis report",
+                "Board approval documentation",
+                "Change log documenting adjustments to risk categories or limits"
+            ],
+            "requiresedd": "No, but the review must identify any new highrisk exposures that may trigger EDD"
+        },
+        {
+            "ruleid": "FINMA-RISK-05",
+            "obligation": "For banks with international branches or foreign group companies, conduct a consolidated risk analysis at the group level that captures all legal and reputational risks related to money laundering and terrorist financing",
+            "whoitappliesto": "Banks operating internationally or with foreign subsidiaries",
+            "risksignalstomonitor": [
+                "Crossborder transaction volumes exceeding group limits",
+                "Regulatory changes in foreign jurisdictions affecting AMLCFT obligations"
+            ],
+            "requireddocumentsorcontrols": [
+                "Consolidated risk analysis report covering all branches and group entities",
+                "Grouplevel KRI dashboard",
+                "Board approval of the consolidated analysis"
+            ],
+            "requiresedd": "Yes, any highrisk crossborder activity identified in the consolidated analysis must trigger EDD"
+        }
+    ]
+}

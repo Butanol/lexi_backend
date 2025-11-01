@@ -3,5 +3,9 @@ __pycache__/
 **/__pycache__/
 *.py[cod]
 *$py.class
+<<<<<<< HEAD
 .venv/
 *.env
+=======
+.venv/
+>>>>>>> a53c2c2d960a4f0372e96ea24e8a64b915176973

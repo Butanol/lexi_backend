@@ -1,0 +1,177 @@
+{
+    "regulationsummary": "MAS Notice 626 requires Singapore banks to conduct customer due diligence CDD for all customers and transactions, with higher scrutiny for highrisk categories such as politically exposed persons PEPs, customers from highrisk jurisdictions, and digital token transactions  Banks must verify identities, identify beneficial owners, and maintain records for at least five years  Simplified CDD may be applied only to lowrisk customers, while enhanced due diligence EDD is mandatory for PEPs, highrisk jurisdictions, and suspicious or complex transactions  Banks must also provide detailed information for wire and value transfers, monitor ongoing activity, and file suspicious transaction reports STRs when warranted",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-CDD-01",
+            "obligation": "Perform full CDD identity verification, beneficial owner identification, and risk assessment before establishing business relations or executing any transaction exceeding S20,000, any crossborder wire transfer exceeding S1,500, or any digital token transaction for a customer who has not otherwise established business relations",
+            "whoitappliesto": "All new customers and nonaccount transactions above the specified thresholds",
+            "risksignalstomonitor": [
+                "Large single or aggregated transactions that exceed thresholds",
+                "Transactions involving customers with incomplete or missing CDD data"
+            ],
+            "requireddocumentsorcontrols": [
+                "Customer identification documents ID card, passport, incorporation papers",
+                "Proof of address",
+                "Beneficial owner details",
+                "Risk assessment documentation",
+                "Approval from senior management for highrisk customers"
+            ],
+            "requiresedd": "Yes  if the customer is a PEP, from a highrisk jurisdiction, or the transaction is otherwise high risk, EDD must be performed"
+        },
+        {
+            "ruleid": "MAS-CDD-02",
+            "obligation": "Identify and verify the beneficial owners of any legal person or legal arrangement, unless the customer is exempted under paragraph 616",
+            "whoitappliesto": "Legal persons and legal arrangements that are not exempted eg, nonlisted companies, nonfinancial institutions, trusts",
+            "risksignalstomonitor": [
+                "Absence of identifiable natural person owners",
+                "Complex ownership structures with opaque control chains"
+            ],
+            "requireddocumentsorcontrols": [
+                "Trust deeds or equivalent documents",
+                "List of ultimate beneficial owners with ID and address",
+                "Verification of ownershipcontrol through reliable sources"
+            ],
+            "requiresedd": "Yes  if the beneficial owner is a PEP, from a highrisk jurisdiction, or the ownership structure is complex or opaque"
+        },
+        {
+            "ruleid": "MAS-CDD-03",
+            "obligation": "Apply EDD for any customer, natural person acting on behalf of a customer, connected party, or beneficial owner who is a PEP, a family member, or a close associate of a PEP",
+            "whoitappliesto": "PEPs, their families, and close associates",
+            "risksignalstomonitor": [
+                "Public office holder status",
+                "Recent changes in political status",
+                "Known associations with highrisk individuals"
+            ],
+            "requireddocumentsorcontrols": [
+                "Senior management approval to establishcontinue relationship",
+                "Source of wealth and source of funds documentation",
+                "Enhanced ongoing monitoring plan"
+            ],
+            "requiresedd": "Yes  EDD is mandatory for all PEPs and their close associates"
+        },
+        {
+            "ruleid": "MAS-CDD-04",
+            "obligation": "Treat customers or beneficial owners from jurisdictions where FATF has called for countermeasures or where the jurisdiction is known to have inadequate AMLCFT measures as higher risk and apply EDD",
+            "whoitappliesto": "Customers and beneficial owners from highrisk jurisdictions",
+            "risksignalstomonitor": [
+                "Origin of funds from highrisk jurisdictions",
+                "Lack of regulatory oversight in the jurisdiction"
+            ],
+            "requireddocumentsorcontrols": [
+                "Country risk assessment",
+                "Additional verification of source of funds",
+                "Senior management approval"
+            ],
+            "requiresedd": "Yes  EDD is required for all customers from highrisk jurisdictions"
+        },
+        {
+            "ruleid": "MAS-CDD-05",
+            "obligation": "Apply simplified CDD only to customers identified as low risk, and only if the customer is not from a highrisk jurisdiction, not a PEP, and no suspicion of money laundering or terrorism financing exists",
+            "whoitappliesto": "Lowrisk customers and financial institutions listed in Appendix 2",
+            "risksignalstomonitor": [
+                "Customer profile indicating low risk",
+                "No adverse media or sanctions screening hits"
+            ],
+            "requireddocumentsorcontrols": [
+                "Basic identity information name, ID number, address",
+                "Risk assessment documentation"
+            ],
+            "requiresedd": "No  simplified CDD is sufficient for lowrisk customers"
+        },
+        {
+            "ruleid": "MAS-CDD-06",
+            "obligation": "For any digital token transaction, perform CDD and record transaction details, and apply EDD if the transaction is above S20,000 or involves a highrisk customer",
+            "whoitappliesto": "All customers engaging in digital token transactions",
+            "risksignalstomonitor": [
+                "Large token transfers",
+                "Transactions involving anonymous or pseudonymous wallets",
+                "Transfers to or from highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Originator and beneficiary identification",
+                "Token type and amount",
+                "Source of funds verification",
+                "Senior management approval for highrisk transactions"
+            ],
+            "requiresedd": "Yes  EDD is required for highrisk digital token transactions"
+        },
+        {
+            "ruleid": "MAS-WIRE-01",
+            "obligation": "Include full originator and beneficiary information name, account number, address, ID number in all crossborder wire transfer messages, and for domestic transfers include at least the originators account number and, where requested, full details",
+            "whoitappliesto": "All banks acting as ordering institutions for wire transfers",
+            "risksignalstomonitor": [
+                "Missing or incomplete originatorbeneficiary details",
+                "Transfers to or from highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Verified originator and beneficiary identities",
+                "Transaction record with unique reference number",
+                "Compliance with 3day request window for additional info"
+            ],
+            "requiresedd": "No  standard CDD suffices, but EDD may be triggered if the transfer is high risk"
+        },
+        {
+            "ruleid": "MAS-WIRE-02",
+            "obligation": "Reject, suspend, or investigate any wire transfer that lacks required originator or beneficiary information, and file an STR if suspicious",
+            "whoitappliesto": "Ordering, beneficiary, and intermediary institutions",
+            "risksignalstomonitor": [
+                "Incomplete transfer messages",
+                "Unusual routing patterns",
+                "Suspicious beneficiary accounts"
+            ],
+            "requireddocumentsorcontrols": [
+                "Internal policy for rejectingsuspending transfers",
+                "Documentation of investigation and STR filing",
+                "Record of communication with authorities"
+            ],
+            "requiresedd": "Yes  if the missing information indicates a highrisk scenario"
+        },
+        {
+            "ruleid": "MAS-MON-01",
+            "obligation": "Implement ongoing monitoring to detect complex, unusually large, or unusual transaction patterns that lack an apparent economic or lawful purpose",
+            "whoitappliesto": "All customers and their transactions",
+            "risksignalstomonitor": [
+                "Rapid movement of funds across multiple accounts",
+                "Highfrequency smallvalue transactions smurfing",
+                "Transactions with no clear business rationale"
+            ],
+            "requireddocumentsorcontrols": [
+                "Automated monitoring system with alerts",
+                "Periodic review reports",
+                "Escalation procedures to senior management"
+            ],
+            "requiresedd": "Yes  if monitoring identifies highrisk patterns, EDD must be performed"
+        },
+        {
+            "ruleid": "MAS-REC-01",
+            "obligation": "Maintain records of all CDD information, transaction details, and monitoring findings for at least five years after the termination of the business relationship or completion of the transaction",
+            "whoitappliesto": "All banks",
+            "risksignalstomonitor": [
+                "Failure to retain records beyond the statutory period",
+                "Inadequate documentation of CDD or monitoring"
+            ],
+            "requireddocumentsorcontrols": [
+                "Secure storage system paper or electronic",
+                "Retention schedule and audit trail",
+                "Access controls for authorized personnel"
+            ],
+            "requiresedd": "No  record keeping is a compliance requirement, not an EDD trigger"
+        },
+        {
+            "ruleid": "MAS-STR-01",
+            "obligation": "Promptly file a Suspicious Transaction Report STR with STRO for any transaction suspected of money laundering or terrorism financing, regardless of amount, and provide a copy to the Authority upon request",
+            "whoitappliesto": "All banks",
+            "risksignalstomonitor": [
+                "Unusual transaction structure",
+                "Customer reluctance to provide information",
+                "Inconsistent source of funds"
+            ],
+            "requireddocumentsorcontrols": [
+                "Internal STR filing procedure",
+                "Documentation of investigation and findings",
+                "Record of communication with authorities"
+            ],
+            "requiresedd": "Yes  filing an STR often triggers EDD if the underlying customer or transaction is high risk"
+        }
+    ]
+}
