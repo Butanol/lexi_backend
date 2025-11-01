@@ -4,6 +4,14 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import os
 import requests
+# attempt local import of detector; allow running as script by falling back
+try:
+    from .pdf_change_detector import compare_with_previous
+except Exception:
+    try:
+        from langchain_modules.tools.pdf_change_detector import compare_with_previous
+    except Exception:
+        compare_with_previous = None
 
 def fetch_mas_pdfs_with_selenium(url, pattern="mas-notice-626"):
     # Setup Selenium WebDriver (using Chrome)
@@ -82,6 +90,15 @@ def download_pdf(pdf_url, save_folder="downloads"):
                         if chunk:  # Filter out keep-alive new chunks
                             f.write(chunk)
                 print(f"Downloaded and saved the PDF: {pdf_path}")
+                # After download, run the PDF change detector if available
+                if compare_with_previous is not None:
+                    try:
+                        # Use the downloader's save_folder as the logs/temp dir so
+                        # comparisons and archives are colocated with the downloaded file.
+                        result = compare_with_previous(pdf_path, logs_temp_dir=save_folder)
+                        print(f"PDF change detector result: {result}")
+                    except Exception as e:
+                        print(f"PDF change detector failed: {e}")
             else:
                 print(f"Content is not a PDF: {pdf_url} - Received content type: {response.headers.get('Content-Type')}")
         else:
