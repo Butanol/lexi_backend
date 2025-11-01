@@ -1,0 +1,99 @@
+{
+    "regulationsummary": "The Hong Kong Ordinance requires financial institutions and designated nonfinancial businesses to identify and verify customers and beneficial owners before establishing a relationship or conducting significant transactions, to continuously monitor those relationships, and to apply enhanced due diligence EDD for highrisk customers such as politically exposed persons PEPs or those from highrisk jurisdictions Information disclosed under the Ordinance must be kept confidential unless specific conditions allow disclosure The rules also set thresholds for when CDD and EDD are mandatory, and prescribe additional safeguards for customers who are not physically present or who are PEPs",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-CDD-01",
+            "obligation": "Identify the customer and verify the customers identity using reliable documents, data or information from a governmental body, relevant authority, or a recognized digital identification system before establishing a business relationship",
+            "whoitappliesto": "All customers of financial institutions and DNFBPs, including TCSP licensees and Category B PMS registrants",
+            "risksignalstomonitor": [
+                "Customer fails to provide valid identification documents",
+                "Customers information is inconsistent with public records"
+            ],
+            "requireddocumentsorcontrols": [
+                "Government-issued ID identity card, passport, etc",
+                "Proof of address",
+                "Digital ID verification if available"
+            ],
+            "requiresedd": "No, this is standard CDD"
+        },
+        {
+            "ruleid": "MAS-CDD-02",
+            "obligation": "Identify and verify the beneficial owners of a customer who is a legal person or trust, ensuring the institution knows who ultimately owns or controls more than 25 of the entity",
+            "whoitappliesto": "Customers that are corporations, partnerships, trusts, or other legal persons",
+            "risksignalstomonitor": [
+                "Ownership structure is opaque or complex",
+                "Beneficial owner is a highrisk jurisdiction or PEP"
+            ],
+            "requireddocumentsorcontrols": [
+                "Certificate of incorporation or registration",
+                "Shareholder register",
+                "Trust deed or partnership agreement",
+                "Beneficial ownership declaration"
+            ],
+            "requiresedd": "Yes, if the beneficial owner is a PEP or from a highrisk jurisdiction"
+        },
+        {
+            "ruleid": "MAS-CDD-03",
+            "obligation": "Carry out CDD before any occasional transaction of 120,000 or more, or any wirevirtual asset transfer of 8,000 or more, unless the customer is a preexisting customer with prior CDD",
+            "whoitappliesto": "All customers, including preexisting ones, for transactions meeting the thresholds",
+            "risksignalstomonitor": [
+                "Large or multiple linked transactions",
+                "Transactions involving highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Transaction details and source of funds",
+                "Customer identification records",
+                "Beneficial owner verification if applicable"
+            ],
+            "requiresedd": "Yes, if the transaction involves a PEP, highrisk jurisdiction, or suspicious patterns"
+        },
+        {
+            "ruleid": "MAS-CDD-04",
+            "obligation": "Apply Enhanced Due Diligence EDD for customers who are PEPs, have a highrisk source of wealth, or are from a highrisk jurisdiction, including additional verification of source of funds and wealth",
+            "whoitappliesto": "PEPs, former PEPs, customers from highrisk jurisdictions, and customers with complex ownership structures",
+            "risksignalstomonitor": [
+                "Publicly known PEP status",
+                "Highrisk jurisdiction of residence or business",
+                "Unusual or large source of funds"
+            ],
+            "requireddocumentsorcontrols": [
+                "PEP declaration and supporting evidence",
+                "Detailed source of wealth documentation",
+                "Periodic review and monitoring reports",
+                "Senior management approval"
+            ],
+            "requiresedd": "Yes, mandatory for all identified highrisk customers"
+        },
+        {
+            "ruleid": "MAS-CDD-05",
+            "obligation": "Continuously monitor the business relationship by reviewing customer information, scrutinizing transactions for unusual patterns, and documenting findings",
+            "whoitappliesto": "All customers, with heightened focus on highrisk and preexisting customers",
+            "risksignalstomonitor": [
+                "Complex or unusually large transactions",
+                "Transactions with no apparent economic purpose",
+                "Changes in customers account activity or ownership"
+            ],
+            "requireddocumentsorcontrols": [
+                "Periodic review logs",
+                "Transaction monitoring system alerts",
+                "Written findings and action plans"
+            ],
+            "requiresedd": "Yes, if monitoring reveals new highrisk indicators"
+        },
+        {
+            "ruleid": "MAS-CDD-06",
+            "obligation": "For customers not physically present for identification, perform at least one additional verification measure such as a secondary ID check, supplementary information verification, or ensure the first payment is made through an account opened in the customers name with a compliant institution",
+            "whoitappliesto": "Customers who are not physically present for identification",
+            "risksignalstomonitor": [
+                "Lack of physical presence",
+                "Use of remote or digital identification only"
+            ],
+            "requireddocumentsorcontrols": [
+                "Secondary ID documents",
+                "Supplementary verification data",
+                "Confirmation of account opening with a compliant institution"
+            ],
+            "requiresedd": "Yes, if the customer is also a PEP or from a highrisk jurisdiction"
+        }
+    ]
+}

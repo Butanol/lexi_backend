@@ -1,0 +1,100 @@
+{
+    "regulationsummary": "Hong Kong AMLCFT regulations require financial institutions to collect detailed originator and recipient information for wire transfers of 8,000 or more, while a reduced set of data is acceptable for lowervalue transfers Institutions must provide missing information to beneficiary or intermediary institutions within three business days and take remedial action if data is incomplete or meaningless Enhanced due diligence EDD is mandated for highrisk situations, for transactions involving foreign institutions, and when recordkeeping or correspondent banking relationships raise concerns All institutions must maintain records for at least five years and establish procedures to identify politically exposed persons and handle noncompliant transfers The rules also cover virtual asset transfers, remittance transactions, and the due diligence required for establishing correspondent banking relationships",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-WIRE-01",
+            "obligation": "Collect and record the originators account number or unique reference, originators address, identification number or dateplace of birth, recipients name, and recipients account number or unique reference for every wire transfer of 8,000 or more",
+            "whoitappliesto": "All ordering institutions processing domestic or foreign wire transfers of 8,000 or more",
+            "risksignalstomonitor": [
+                "Transfers above the threshold without complete originatorrecipient details",
+                "Large singleday volume of highvalue transfers"
+            ],
+            "requireddocumentsorcontrols": [
+                "Wire transfer instruction form with required fields",
+                "Customer identification documents ID card, passport, etc",
+                "Internal audit log confirming data capture",
+                "Approval from senior management for each highvalue transfer"
+            ],
+            "requiresedd": "Yes  EDD is required for any transfer where the originator or recipient is a politically exposed person, a known or suspected moneylaundering suspect, or a foreign entity with limited regulatory oversight"
+        },
+        {
+            "ruleid": "MAS-WIRE-02",
+            "obligation": "For wire transfers below 8,000, collect and record the originators account number or unique reference, originators address, recipients name, and recipients account number or unique reference",
+            "whoitappliesto": "All ordering institutions processing domestic or foreign wire transfers below 8,000",
+            "risksignalstomonitor": [
+                "Frequent lowvalue transfers that aggregate to large amounts",
+                "Transfers to or from highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Wire transfer instruction form with required fields",
+                "Customer identification records",
+                "Transaction monitoring system flagging aggregation of lowvalue transfers"
+            ],
+            "requiresedd": "No  standard due diligence suffices unless other highrisk indicators are present"
+        },
+        {
+            "ruleid": "MAS-WIRE-03",
+            "obligation": "If a beneficiary or intermediary institution receives a wire transfer lacking any required information, it must obtain the missing data from the ordering institution within three business days and, if unavailable, either restrictterminate the relationship or implement reasonable AMLTFT mitigation measures",
+            "whoitappliesto": "All beneficiary and intermediary institutions receiving wire transfers",
+            "risksignalstomonitor": [
+                "Missing or incomplete originatorrecipient data",
+                "Requests for information that are denied or delayed"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written request for missing information",
+                "Record of response time and action taken",
+                "Documentation of any relationship restriction or mitigation steps"
+            ],
+            "requiresedd": "Yes  EDD is required if the missing information relates to a highrisk jurisdiction or a knownsuspected moneylaundering suspect"
+        },
+        {
+            "ruleid": "MAS-EDD-01",
+            "obligation": "Apply enhanced due diligence for any customer or beneficial owner that is a politically exposed person, a known or suspected moneylaundering suspect, or a customer from a highrisk jurisdiction, including sourceofwealth verification and ongoing monitoring",
+            "whoitappliesto": "All customers, beneficial owners, and highrisk counterparties",
+            "risksignalstomonitor": [
+                "Political exposure, public office, or close associates",
+                "Large or irregular cash deposits",
+                "Transactions involving highrisk countries"
+            ],
+            "requireddocumentsorcontrols": [
+                "PEP declaration and verification documents",
+                "Sourceofwealth statements",
+                "Enhanced transaction monitoring rules",
+                "Periodic review reports"
+            ],
+            "requiresedd": "Yes  EDD is mandatory for all identified highrisk categories"
+        },
+        {
+            "ruleid": "MAS-REC-01",
+            "obligation": "Maintain original or copies of all documents and records related to each transaction and customer for at least five years, and keep customer files throughout the business relationship plus five years after termination",
+            "whoitappliesto": "All financial institutions and DNFBPs",
+            "risksignalstomonitor": [
+                "Missing or incomplete record retention",
+                "Failure to retain records beyond the statutory period"
+            ],
+            "requireddocumentsorcontrols": [
+                "Secure electronic database or microfilm storage",
+                "Retention schedule and audit trail",
+                "Periodic internal audits of recordkeeping compliance"
+            ],
+            "requiresedd": "No  this is a standard recordkeeping requirement"
+        },
+        {
+            "ruleid": "MAS-CORR-01",
+            "obligation": "Before establishing a correspondent banking relationship with a foreign institution, collect sufficient information on the institutions business, reputation, supervision quality, and AMLTFT controls obtain senior management approval and document responsibilities for both parties",
+            "whoitappliesto": "All authorized institutions entering correspondent banking relationships",
+            "risksignalstomonitor": [
+                "Lack of physical presence in the foreign jurisdiction",
+                "Poor regulatory supervision or weak AMLTFT controls",
+                "Unverified customer due diligence procedures"
+            ],
+            "requireddocumentsorcontrols": [
+                "Duediligence report on the foreign institution",
+                "Senior management approval documentation",
+                "Agreements outlining responsibilities and datasharing protocols",
+                "Ongoing monitoring plan for the relationship"
+            ],
+            "requiresedd": "Yes  EDD is required if the foreign institution is located in a highrisk jurisdiction or has inadequate AMLTFT controls"
+        }
+    ]
+}

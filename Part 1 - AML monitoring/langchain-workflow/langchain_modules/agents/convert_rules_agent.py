@@ -1,6 +1,9 @@
 import os
 import json
-import fitz  # PyMuPDF
+import importlib.util
+from pathlib import Path
+# reuse the PDF extraction helper from the preprocess pipeline instead of
+# using PyMuPDF directly
 from langchain_groq import ChatGroq
 import re
 
@@ -49,22 +52,29 @@ validation_llm = ChatGroq(
     max_retries=2
 )
 
-# Function to extract text from PDF using PyMuPDF (fitz)
-def extract_pdf_text(pdf_path):
-    text = ""
+def extract_pdf_text_via_preprocess(pdf_path):
+    """Load the preprocess_data module and call its process_pdf() helper.
+
+    This avoids duplicating extraction logic and ensures consistent text
+    output across the project.
+    """
     try:
-        pdf_document = fitz.open(pdf_path)
-        for page_num in range(pdf_document.page_count):
-            page = pdf_document.load_page(page_num)
-            text += page.get_text("text")  # Extracting plain text from each page
-        return text
+        # Locate the preprocess_data.py file relative to this script. The
+        # folder structure is: langchain-workflow/langchain_modules/agents/...
+        # so parents[2] is the langchain-workflow directory.
+        module_path = Path(__file__).resolve().parents[2] / "scripts" / "preprocess_data.py"
+        spec = importlib.util.spec_from_file_location("preprocess_data", str(module_path))
+        preprocess = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(preprocess)
+        # Call the process_pdf function from the preprocess module
+        return preprocess.process_pdf(Path(pdf_path))
     except Exception as e:
-        print(f"Error extracting text from PDF: {e}")
+        print(f"Error extracting text via preprocess tool: {e}")
         return ""
 
 # Extract text from the PDF
-pdf_path = "./Part 1 - AML monitoring/langchain-workflow/logs/temp/MAS.pdf"
-pdf_text = extract_pdf_text(pdf_path)
+pdf_path = Path("./Part 1 - AML monitoring/langchain-workflow/logs/temp/HKMA_trimmed9.pdf")
+pdf_text = extract_pdf_text_via_preprocess(pdf_path)
 
 # Combine the PDF text with your custom prompt (you can adjust the prompt if needed)
 messages = [PROMPT + "\n\n" + pdf_text]  # Add PDF content to prompt
@@ -112,7 +122,7 @@ else:
     parsed_response = {}
 
 # Ensure file path is correct and that we have permission to write to it
-output_file = "Part 1 - AML monitoring/langchain-workflow/logs/curr_MAS_rules.json"
+output_file = "Part 1 - AML monitoring/langchain-workflow/logs/curr_HKMA_rules9.json"
 
 # Check if the directory exists before saving
 output_dir = os.path.dirname(output_file)

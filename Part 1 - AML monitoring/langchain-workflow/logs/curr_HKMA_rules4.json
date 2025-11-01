@@ -1,0 +1,90 @@
+{
+    "regulationsummary": "Licensed providers and their associated entities must promptly notify the Commission of any significant changes such as cessation of services, address changes, director changes, and auditor appointments They must also comply with annual fee and return obligations, and adhere to strict restrictions on the business activities of associated entities Failure to comply can lead to fines, imprisonment, or revocation of licences Enhanced Due Diligence EDD is required for any changes that could affect the risk profile of the provider or its associated entities",
+    "actionablerules": [
+        {
+            "ruleid": "AML-REG-01",
+            "obligation": "A licensed provider must submit a written notice to the Commission within 7 business days before it intends to cease providing any VA service for which it is licensed",
+            "whoitappliesto": "Licensed providers",
+            "risksignalstomonitor": [
+                "Planned cessation of a VA service",
+                "Unusual or abrupt changes in service offerings"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Full description of the intended cessation"
+            ],
+            "requiresedd": "Yes  any cessation may alter the providers risk profile and requires review of client exposure"
+        },
+        {
+            "ruleid": "AML-REG-02",
+            "obligation": "A licensed provider must notify the Commission in writing at least 7 business days in advance if it intends to change the address at which it proposes to provide any VA service",
+            "whoitappliesto": "Licensed providers",
+            "risksignalstomonitor": [
+                "Change of business address",
+                "Relocation to highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Updated address details"
+            ],
+            "requiresedd": "Yes  address changes can affect jurisdictional risk and client asset protection"
+        },
+        {
+            "ruleid": "AML-REG-03",
+            "obligation": "Within 7 business days after a person becomes or ceases to be a director of a licensed provider, both the person and the licensed provider must notify the Commission in writing of the name, address, and nature of the position",
+            "whoitappliesto": "Licensed providers and new or departing directors",
+            "risksignalstomonitor": [
+                "Director changes",
+                "Potential conflicts of interest"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Directors personal details and role description"
+            ],
+            "requiresedd": "Yes  director changes can impact governance and risk management"
+        },
+        {
+            "ruleid": "AML-REG-04",
+            "obligation": "An associated entity of a licensed provider must notify the Commission in writing within 7 business days after it becomes or ceases to be such an entity, and must provide all particulars specified in Schedule 3D",
+            "whoitappliesto": "Associated entities of licensed providers",
+            "risksignalstomonitor": [
+                "Formation or dissolution of an associated entity",
+                "Changes in ownership or control"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Schedule 3D particulars eg, entity details, ownership structure"
+            ],
+            "requiresedd": "Yes  associated entities can be conduits for money laundering or fraud"
+        },
+        {
+            "ruleid": "AML-REG-05",
+            "obligation": "An associated entity of a licensed provider must not, at any time after becoming such an entity, conduct any business other than receiving or holding client assets of the licensed provider unless expressly authorized in writing by the Commission",
+            "whoitappliesto": "Associated entities of licensed providers",
+            "risksignalstomonitor": [
+                "Unapproved business activities",
+                "Diversification into unrelated services"
+            ],
+            "requireddocumentsorcontrols": [
+                "Commission authorization if any",
+                "Internal policy confirming restricted activities"
+            ],
+            "requiresedd": "Yes  deviation from permitted activities signals potential misuse of client assets"
+        },
+        {
+            "ruleid": "AML-REG-06",
+            "obligation": "A licensed provider must appoint an eligible auditor within 1 month after it becomes licensed and notify the Commission in writing of the auditors name and address within 7 business days of the appointment",
+            "whoitappliesto": "Licensed providers",
+            "risksignalstomonitor": [
+                "Failure to appoint an auditor",
+                "Delayed auditor appointment"
+            ],
+            "requireddocumentsorcontrols": [
+                "Appointment letter of the auditor",
+                "Written notice to the Commission",
+                "Compliance with eligibility criteria Section 53ZSA"
+            ],
+            "requiresedd": "No  this is a standard compliance requirement, but audit quality should be monitored"
+        }
+    ]
+}

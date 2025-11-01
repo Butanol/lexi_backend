@@ -15,7 +15,8 @@ from pathlib import Path
 from typing import Optional
 import json
 
-from pdfminer.high_level import extract_text
+# Lazy import of PyMuPDF (fitz) is performed inside process_pdf() so the
+# module can be imported in environments where PyMuPDF is not installed.
 import requests
 
 
@@ -25,8 +26,27 @@ DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
 
 
 def process_pdf(path: Path) -> str:
+    """Extract text from PDF using PyMuPDF (fitz).
+
+    Accepts a Path or string and returns the concatenated plain text of all
+    pages. Returns empty string on error and logs the exception.
+    """
     try:
-        return extract_text(str(path))
+        try:
+            import fitz  # PyMuPDF
+        except Exception:
+            print("PyMuPDF (fitz) not installed. Install with: pip install PyMuPDF")
+            return ""
+
+        doc = fitz.open(str(path))
+        text_parts = []
+        for page in doc:
+            try:
+                text_parts.append(page.get_text("text"))
+            except Exception:
+                # If a single page fails, continue with others
+                text_parts.append("")
+        return "\n\n".join([p for p in text_parts if p])
     except Exception as e:
         print(f"Failed to extract {path}: {e}")
         return ""
