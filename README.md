@@ -1,2 +1,3 @@
 # lexi_backend
-Lexi Backend
+Installation Guide:
+1. `pip install "fastapi[standard]" langchain uvicorn`
