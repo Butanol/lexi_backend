@@ -1,0 +1,102 @@
+{
+    "regulationsummary": "The regulation establishes a comprehensive licensing regime for virtual asset VA service providers and representatives, requiring fitandproper assessments, approval of responsible officers and ultimate owners, and strict controls over client assets and premises Licensed entities must maintain a register, keep client assets segregated, and comply with antimoneylaundering and antiterrorist financing policies The Commission may impose, amend or remove conditions on licences, accreditations, and premises, and must provide reasons for decisions and allow review by a tribunal Failure to meet any of these obligations can result in fines, imprisonment, or revocation of licences and approvals",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-VA-LIC-01",
+            "obligation": "A corporation must apply for a licence to provide a VA service only if it is a fit and proper person, has at least two approved responsible officers one of whom is an executive director, and has an approved premises for keeping records",
+            "whoitappliesto": "Corporate applicants for VA service licences",
+            "risksignalstomonitor": [
+                "Application from a corporation that is not a company under the Companies Ordinance",
+                "Missing or unapproved responsible officers in the application",
+                "Premises not approved by the Commission"
+            ],
+            "requireddocumentsorcontrols": [
+                "Fit and proper assessment report",
+                "List of responsible officers with approval certificates",
+                "Premises approval notice from the Commission",
+                "Proof of payment of prescribed fee"
+            ],
+            "requiresedd": "Yes  the fit and proper assessment must include enhanced due diligence on the corporations directors, ultimate owners, and financial standing"
+        },
+        {
+            "ruleid": "MAS-VA-RO-02",
+            "obligation": "Every responsible officer of a licensed provider must be approved by the Commission, have sufficient authority within the provider, and be a fit and proper person",
+            "whoitappliesto": "Responsible officers of licensed VA providers",
+            "risksignalstomonitor": [
+                "Unapproved or unfit individuals listed as responsible officers",
+                "Responsible officers lacking documented authority",
+                "Responsible officers who are not resident in Hong Kong"
+            ],
+            "requireddocumentsorcontrols": [
+                "Approval certificate from the Commission",
+                "Letter of authority from the provider",
+                "Proof of Hong Kong residency eg, address, ID"
+            ],
+            "requiresedd": "Yes  the Commission must conduct enhanced due diligence on each responsible officers background, including criminal history and financial integrity"
+        },
+        {
+            "ruleid": "MAS-VA-UO-03",
+            "obligation": "An ultimate owner of a licensed provider must obtain written approval from the Commission before becoming an ultimate owner and must keep the Commission informed of any changes to their contact details within 7 business days",
+            "whoitappliesto": "Ultimate owners of licensed VA providers",
+            "risksignalstomonitor": [
+                "Unapproved ultimate owners listed in the providers records",
+                "Changes to ultimate owner details not reported within 7 days",
+                "Ultimate owners with a history of moneylaundering or terrorist financing offences"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written approval notice from the Commission",
+                "Updated contact details address, phone, email",
+                "Fit and proper assessment for the ultimate owner"
+            ],
+            "requiresedd": "Yes  enhanced due diligence is required on the ultimate owners identity, ownership structure, and criminal record"
+        },
+        {
+            "ruleid": "MAS-VA-CA-04",
+            "obligation": "Client assets held by a licensed provider or its associated entities must be kept separate from the providers own assets and cannot be used to satisfy any court order or execution against the provider",
+            "whoitappliesto": "Licensed VA providers and their associated entities",
+            "risksignalstomonitor": [
+                "Mixing of client assets with company assets in accounting records",
+                "Use of client assets to settle debts or obligations of the provider",
+                "Failure to maintain separate custody accounts"
+            ],
+            "requireddocumentsorcontrols": [
+                "Segregated custody account statements",
+                "Internal control procedures for client asset segregation",
+                "Audit trail of all client asset movements"
+            ],
+            "requiresedd": "Yes  the provider must perform enhanced due diligence on the source of client assets and monitor for suspicious transfers"
+        },
+        {
+            "ruleid": "MAS-VA-PM-05",
+            "obligation": "A licensed provider must keep all records or documents required under the Ordinance only at premises approved by the Commission",
+            "whoitappliesto": "Licensed VA providers",
+            "risksignalstomonitor": [
+                "Use of nonapproved premises for record keeping",
+                "Inadequate security controls at approved premises",
+                "Failure to update the register with approved premises details"
+            ],
+            "requireddocumentsorcontrols": [
+                "Premises approval notice from the Commission",
+                "Security and access control logs for the premises",
+                "Regular audit reports on premises compliance"
+            ],
+            "requiresedd": "Yes  enhanced due diligence is required to verify the suitability and security of the approved premises"
+        },
+        {
+            "ruleid": "MAS-VA-NC-06",
+            "obligation": "A licensed person or ultimate owner must notify the Commission in writing of any change in any information that has been provided to the Commission within 7 business days",
+            "whoitappliesto": "Licensed VA providers and ultimate owners",
+            "risksignalstomonitor": [
+                "Delayed or missing notifications of changes in ownership, contact details, or business address",
+                "Inconsistent information between the register and the providers records",
+                "Failure to update the register after a change"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notification form with details of the change",
+                "Supporting documents eg, updated ID, address proof",
+                "Confirmation receipt from the Commission"
+            ],
+            "requiresedd": "No  standard notification procedures apply, but the Commission may review the change for fit and proper compliance"
+        }
+    ]
+}

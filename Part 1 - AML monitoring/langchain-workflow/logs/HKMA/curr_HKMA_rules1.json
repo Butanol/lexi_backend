@@ -1,0 +1,106 @@
+{
+    "regulationsummary": "The Ordinance establishes comprehensive antimoney laundering and counterterrorist financing obligations for financial institutions, insurers, money service operators, virtual asset service providers, and other designated nonfinancial businesses It requires customer due diligence CDD, recordkeeping for highvalue storedvalue facilities, and enhanced due diligence EDD for specified highrisk DNFBPs The Ordinance empowers relevant authorities to supervise compliance, conduct inspections, and enforce penalties, while providing guidelines to clarify operational requirements It also sets out procedures for investigations, evidence handling, and crossjurisdictional cooperation on virtual asset activities Noncompliance can lead to substantial fines, imprisonment, and disciplinary actions",
+    "actionablerules": [
+        {
+            "ruleid": "AML-CDD-01",
+            "obligation": "Collect and verify the identity of every customer, the source of funds, and the purpose of the transaction before opening an account or providing a service",
+            "whoitappliesto": "All financial institutions, insurers, licensed money service operators, licensed VAS providers, TCSP licensees, and Category B PMS registrants",
+            "risksignalstomonitor": [
+                "Customers who provide anonymous or incomplete identification documents",
+                "Transactions involving unusually large amounts or rapid movement of funds"
+            ],
+            "requireddocumentsorcontrols": [
+                "Copy of governmentissued ID or passport",
+                "Proof of address utility bill, bank statement",
+                "Source of funds documentation salary slips, business invoices",
+                "Internal CDD policy and training records"
+            ],
+            "requiresedd": "Yes  if the customer is a highrisk individual or the transaction involves highrisk jurisdictions, complex ownership structures, or is otherwise suspicious"
+        },
+        {
+            "ruleid": "AML-REC-02",
+            "obligation": "Maintain complete records of all storedvalue facility transactions where the maximum value stored exceeds HK3,000 and the value is stored on a physical device",
+            "whoitappliesto": "SVF licensees and banks operating storedvalue facilities",
+            "risksignalstomonitor": [
+                "Frequent cash deposits or withdrawals exceeding HK3,000",
+                "Multiple small deposits that aggregate to a large amount structuring"
+            ],
+            "requireddocumentsorcontrols": [
+                "Transaction logs with customer details, date, amount, and purpose",
+                "Device serial numbers and ownership records",
+                "Periodic audit reports of storedvalue balances"
+            ],
+            "requiresedd": "No  standard recordkeeping suffices EDD is triggered only if the transaction is otherwise suspicious"
+        },
+        {
+            "ruleid": "AML-EDD-03",
+            "obligation": "Apply enhanced due diligence to DNFBPs when they conduct transactions involving real estate, securities, trust or company services, or other highrisk activities",
+            "whoitappliesto": [
+                "Licensed individual insurance agents, insurance agencies, and insurance broker companies",
+                "Licensed estate agents",
+                "Licensed VAS providers and their associated entities",
+                "TCSP licensees",
+                "Category B PMS registrants"
+            ],
+            "risksignalstomonitor": [
+                "Transactions involving offshore entities or shell companies",
+                "Complex ownership structures with no clear beneficial owner",
+                "Highvalue transactions with no clear economic rationale"
+            ],
+            "requireddocumentsorcontrols": [
+                "Beneficial ownership statements",
+                "Detailed transaction purpose and source of funds",
+                "Periodic review of the DNFBPs client base and transaction patterns",
+                "Internal EDD policy and audit trail"
+            ],
+            "requiresedd": "Yes  EDD is mandatory for all DNFBPs when they are involved in the specified highrisk transactions"
+        },
+        {
+            "ruleid": "AML-SUS-04",
+            "obligation": "Flag and investigate any transaction that is unusual, involves highrisk jurisdictions, or shows structuring or rapid movement of funds",
+            "whoitappliesto": "All regulated entities subject to the Ordinance",
+            "risksignalstomonitor": [
+                "Structuring smurfing of deposits or withdrawals",
+                "Rapid transfer of funds between accounts or jurisdictions",
+                "Transactions with no clear business or economic purpose"
+            ],
+            "requireddocumentsorcontrols": [
+                "Suspicious transaction reports STRs filed with the relevant authority",
+                "Internal investigation logs and findings",
+                "Evidence of source of funds and transaction purpose"
+            ],
+            "requiresedd": "Yes  if the transaction is flagged as suspicious, EDD must be performed on the customer and the transaction"
+        },
+        {
+            "ruleid": "AML-GUIDE-05",
+            "obligation": "Implement and maintain policies and procedures that incorporate any guidelines issued by the Monetary Authority, Securities and Futures Commission, Insurance Authority, or other relevant regulatory bodies",
+            "whoitappliesto": "All regulated entities covered by the Ordinance",
+            "risksignalstomonitor": [
+                "Noncompliance with published guidelines",
+                "Lack of documented policies or outdated procedures"
+            ],
+            "requireddocumentsorcontrols": [
+                "Copies of all relevant guidelines and the institutions internal policy documents",
+                "Records of staff training on guidelines",
+                "Audit reports confirming adherence to guidelines"
+            ],
+            "requiresedd": "No  this rule governs standard compliance EDD is triggered by other risk indicators"
+        },
+        {
+            "ruleid": "AML-ENFORCE-06",
+            "obligation": "Cooperate with investigations, provide requested records, and pay any pecuniary penalties imposed by relevant authorities",
+            "whoitappliesto": "All regulated entities, including financial institutions, insurers, VAS providers, and DNFBPs",
+            "risksignalstomonitor": [
+                "Failure to respond to inspection requests",
+                "Refusal to provide required records",
+                "Nonpayment of imposed penalties"
+            ],
+            "requireddocumentsorcontrols": [
+                "Acknowledgement of inspection or investigation requests",
+                "Copies of records produced to investigators",
+                "Payment receipts for any fines or penalties"
+            ],
+            "requiresedd": "No  this rule addresses enforcement and compliance, not due diligence"
+        }
+    ]
+}

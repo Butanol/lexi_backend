@@ -1,0 +1,97 @@
+{
+    "regulationsummary": "The regulation establishes the framework for licensing and accrediting individuals and corporations to provide VA services, including deemed licensing periods, written decision notices, objection rights, and closingdown periods It sets out the conditions under which individuals are deemed licensed or approved as responsible officers, the timelines for notifications and objections, and the requirements for monitoring and reporting during the closingdown period The rules also impose reporting obligations for specified cash transactions and allow the Commission to impose additional requirements on corporations or individuals during the first 12 months of licensing Enhanced due diligence EDD is required for certain highrisk individuals and for large cash transactions, while routine monitoring applies to all other cases",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-VA-01",
+            "obligation": "Track and record the 12month deemed licensing period for each individual who meets the conditions for deemed licensing",
+            "whoitappliesto": "Individuals who have applied for a VA service licence 53ZRL and accreditation 53ZRM and satisfy all conditions in subsection 1ad",
+            "risksignalstomonitor": [
+                "Application remains pending beyond the 12month period without withdrawal or objection",
+                "No recorded start or end date for the deemed licensing period"
+            ],
+            "requireddocumentsorcontrols": [
+                "Application forms 53ZRL, 53ZRM",
+                "Internal log of start date first day of deemed period and end date withdrawal, refusal, or 12month expiry",
+                "Automated reminder system to flag when the 12month period is approaching"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-VA-02",
+            "obligation": "Issue a written notice section 5 or 7 notice to the individual within the first 12 months of the decision on their application",
+            "whoitappliesto": "All individuals whose application decisions are made under sections 5 or 7",
+            "risksignalstomonitor": [
+                "No notice sent within 12 months of decision",
+                "Notice sent after the 12month deadline"
+            ],
+            "requireddocumentsorcontrols": [
+                "Template notice containing decision, reasons, and objection rights",
+                "Timestamped electronic delivery record",
+                "Audit trail confirming receipt by the individual"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-VA-03",
+            "obligation": "Provide a 12month objection period for deemed withdrawal of an application and monitor for objections",
+            "whoitappliesto": "All applicants whose applications are subject to deemed withdrawal under section 10",
+            "risksignalstomonitor": [
+                "Objection not filed within the 12month period",
+                "Objection filed after the 12month deadline"
+            ],
+            "requireddocumentsorcontrols": [
+                "Record of the date the specified notice was issued",
+                "Log of objection receipt and date",
+                "Automated reminder to the applicant 30 days before objection deadline"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-VA-04",
+            "obligation": "Enforce a 3month closingdown period for corporations after denial, withdrawal, or refusal of a VA service licence",
+            "whoitappliesto": "Corporations whose application for a VA service licence 53ZRK is denied, withdrawn, or refused",
+            "risksignalstomonitor": [
+                "Business continues to operate beyond the 3month closingdown period",
+                "No formal cessation notice issued to the corporation"
+            ],
+            "requireddocumentsorcontrols": [
+                "Closingdown period start date date of notice",
+                "End date 12month expiry or 3month period",
+                "Cessation confirmation from the corporation"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-VA-05",
+            "obligation": "Conduct Enhanced Due Diligence on individuals applying as responsible officers when any of the conditions in subsection 1ad are not fully satisfied",
+            "whoitappliesto": "Individuals applying for responsible officer approval 53ZRP who do not meet all conditions in subsection 1ad",
+            "risksignalstomonitor": [
+                "Incomplete or missing application documents",
+                "Applicant from a highrisk jurisdiction or on a sanctions list",
+                "Prior regulatory or criminal history"
+            ],
+            "requireddocumentsorcontrols": [
+                "Full application package 53ZRL, 53ZRM, 53ZRP",
+                "Background check reports sanctions, PEP, adverse media",
+                "Source of funds and wealth verification",
+                "Approval from senior compliance officer"
+            ],
+            "requiresedd": "Yes  due to incomplete documentation or highrisk profile"
+        },
+        {
+            "ruleid": "MAS-VA-06",
+            "obligation": "Submit a cash transaction report for any specified cash transaction exceeding HK120,000 or equivalent by a nonHong Kong precious metals and stones dealer",
+            "whoitappliesto": "NonHong Kong precious metals and stones dealers conducting cash transactions with customers",
+            "risksignalstomonitor": [
+                "Cash transaction amount  HK120,000",
+                "Customer from a highrisk country or with suspicious travel patterns"
+            ],
+            "requireddocumentsorcontrols": [
+                "Cash transaction report containing dealer info, customer info, travel details, transaction details, and payment amount",
+                "Verification of customer identity and source of funds",
+                "Retention of supporting documents for 5 years"
+            ],
+            "requiresedd": "Yes  for customers with highrisk indicators or large cash amounts"
+        }
+    ]
+}

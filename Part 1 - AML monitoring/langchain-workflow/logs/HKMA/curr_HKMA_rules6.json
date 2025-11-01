@@ -1,0 +1,104 @@
+{
+    "regulationsummary": "The provisions set out the regulatory framework for precious metals and stones businesses, requiring Category B registrants to obtain Commissioner approval before appointing directors, to display registration certificates, and to promptly notify the Commissioner of any changes or intended cessation of business Applications must be filed in prescribed form and accompanied by the appropriate fee Registrants must comply with disciplinary orders and maintain confidentiality of information Failure to comply can result in fines, imprisonment, or disciplinary action, and the Commissioner may impose pecuniary penalties or refer matters to the Tribunal for review",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-CDD-01",
+            "obligation": "Obtain written approval from the Commissioner before appointing a director to a Category B registrant that is a corporation",
+            "whoitappliesto": "Corporations that are Category B registrants",
+            "risksignalstomonitor": [
+                "Appointment of a director without prior written approval",
+                "Director with a history of financial crime or unfit background"
+            ],
+            "requireddocumentsorcontrols": [
+                "Completed application form as specified by the Commissioner",
+                "Fee payment receipt as per Schedule 3K",
+                "Fit and proper assessment report of the director"
+            ],
+            "requiresedd": "Yes, because the directors suitability must be assessed as a fit and proper person"
+        },
+        {
+            "ruleid": "MAS-CDD-02",
+            "obligation": "Submit all applications for director approval in the form and manner specified by the Commissioner and pay the required fee",
+            "whoitappliesto": "All entities applying for director approval under sections 53ZUW, 53ZUX or 53ZUY",
+            "risksignalstomonitor": [
+                "Missing or incomplete application forms",
+                "Failure to pay the prescribed fee"
+            ],
+            "requireddocumentsorcontrols": [
+                "Application form in the prescribed format",
+                "Proof of fee payment"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-CDD-03",
+            "obligation": "Display the certificate of registration in a conspicuous place at the principal place of business and at each branch",
+            "whoitappliesto": "All registrants, including those operating electronically",
+            "risksignalstomonitor": [
+                "Absence of a physical display of the certificate",
+                "Electronic certificate not accompanied by a printed copy"
+            ],
+            "requireddocumentsorcontrols": [
+                "Certificate of registration printed copy",
+                "Photographic evidence of display"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-CDD-04",
+            "obligation": "Notify the Commissioner in writing within one month of any change in specified particulars, such as ownership or control",
+            "whoitappliesto": "All registrants",
+            "risksignalstomonitor": [
+                "Delayed or missing notifications of changes",
+                "Changes in ultimate ownership or control without notification"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notification to the Commissioner",
+                "Updated registration certificate if applicable"
+            ],
+            "requiresedd": "Yes, if the change involves ownership or control, a review of the new owners suitability is required"
+        },
+        {
+            "ruleid": "MAS-CDD-05",
+            "obligation": "Provide written notice to the Commissioner before the intended date of cessation of business or specified transactions",
+            "whoitappliesto": "Category A and Category B registrants",
+            "risksignalstomonitor": [
+                "Failure to notify cessation in advance",
+                "Sudden cessation of business without prior notice"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written cessation notice specifying intended date",
+                "Confirmation of receipt by the Commissioner"
+            ],
+            "requiresedd": "Yes, because cessation may indicate a change in risk profile and requires assessment of remaining obligations"
+        },
+        {
+            "ruleid": "MAS-CDD-06",
+            "obligation": "Comply with any disciplinary order issued by the Commissioner, including remedial actions and payment of pecuniary penalties",
+            "whoitappliesto": "Category A and Category B registrants",
+            "risksignalstomonitor": [
+                "Noncompliance with remedial actions",
+                "Repeated contraventions of regulatory conditions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice of disciplinary order",
+                "Evidence of remedial action taken or payment of penalty"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-CDD-07",
+            "obligation": "Maintain confidentiality of information obtained under the Ordinance and not disclose it to unauthorized persons",
+            "whoitappliesto": "Specified persons, including relevant authorities and their employees",
+            "risksignalstomonitor": [
+                "Unauthorized disclosure of confidential information",
+                "Failure to secure sensitive documents"
+            ],
+            "requireddocumentsorcontrols": [
+                "Confidentiality agreements",
+                "Access logs and security controls"
+            ],
+            "requiresedd": "No"
+        }
+    ]
+}
