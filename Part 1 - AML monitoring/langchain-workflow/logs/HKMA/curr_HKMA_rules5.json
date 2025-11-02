@@ -1,0 +1,90 @@
+{
+    "regulationsummary": "The ordinance requires entities that deal in precious metals and stones to obtain a Category A or B registration, subject to a fitandproper assessment that includes criminal history, bankruptcy status and compliance with regulatory conditions  Applicants must submit a business registration certificate, a declaration of lawful purpose, premises consent and the prescribed fee  The Commissioner may impose, amend or remove conditions, and may cancel or suspend registration for noncompliance, criminal conduct or failure to meet conditions  Ultimate owners and partners of Category B registrants must obtain written approval and satisfy the fitandproper test  Nonregistered persons are prohibited from carrying out specified transactions and from claiming registration status",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-REG-A-01",
+            "obligation": "Collect a valid business registration certificate, a declaration that the precious metals and stones business will be carried out for a lawful purpose, written consent from all occupants of any domestic premises to be used as business premises, and the prescribed application fee when a person applies for Category A registration",
+            "whoitappliesto": "Applicants for Category A registration",
+            "risksignalstomonitor": [
+                "Missing or incomplete business registration certificate",
+                "No written consent from premises occupants",
+                "Failure to declare lawful purpose"
+            ],
+            "requireddocumentsorcontrols": [
+                "Business registration certificate",
+                "Declaration of lawful purpose",
+                "Written consent from premises occupants",
+                "Proof of fee payment"
+            ],
+            "requiresedd": "Yes  the applicant must undergo a fitandproper assessment, including checks for criminal convictions, bankruptcy, and compliance with regulatory conditions"
+        },
+        {
+            "ruleid": "MAS-CDD-02",
+            "obligation": "Perform a fitandproper assessment for each individual applicant, partner, director or ultimate owner, checking for convictions of specified offences, overseas convictions for money laundering or terrorist financing, failure to comply with regulatory requirements, undischarged bankruptcy, and liquidation or windingup status",
+            "whoitappliesto": "Individuals, partners, directors, ultimate owners of Category A or B registrants",
+            "risksignalstomonitor": [
+                "Criminal convictions related to financial crime",
+                "Overseas convictions for money laundering or terrorism financing",
+                "Undischarged bankruptcy filings",
+                "Liquidation or windingup orders"
+            ],
+            "requireddocumentsorcontrols": [
+                "Criminal record checks",
+                "Bankruptcy and insolvency records",
+                "Regulatory compliance history",
+                "Fitandproper assessment report"
+            ],
+            "requiresedd": "Yes  the assessment is a form of Enhanced Due Diligence EDD required by the ordinance"
+        },
+        {
+            "ruleid": "MAS-CANC-03",
+            "obligation": "Cancel or suspend a Category A or B registration if the registrant contravenes any registration condition, fails to pay the annual fee, fails to comply with remedial orders, or if circumstances suggest the business is being carried out for an unlawful purpose",
+            "whoitappliesto": "Registered Category A and Category B precious metals and stones dealers",
+            "risksignalstomonitor": [
+                "Nonpayment of annual fee",
+                "Failure to comply with remedial orders",
+                "Evidence of unlawful business purpose",
+                "Revocation of premises occupant consent"
+            ],
+            "requireddocumentsorcontrols": [
+                "Payment records for annual fee",
+                "Compliance reports on remedial orders",
+                "Internal audit findings on business purpose",
+                "Premises occupant consent records"
+            ],
+            "requiresedd": "No  standard compliance monitoring is sufficient"
+        },
+        {
+            "ruleid": "MAS-ULT-04",
+            "obligation": "Obtain written approval from the Commissioner before a person becomes an ultimate owner or partner of a Category B registrant, and ensure that the person satisfies the fitandproper test",
+            "whoitappliesto": "Prospective ultimate owners and partners of Category B registrants",
+            "risksignalstomonitor": [
+                "Unapproved ultimate owners or partners",
+                "Individuals with disqualifying criminal or financial history",
+                "Lack of written approval documentation"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written approval from the Commissioner",
+                "Fitandproper assessment report",
+                "Documentation of ultimate ownership or partnership status"
+            ],
+            "requiresedd": "Yes  the approval process includes EDD to assess the ultimate owner or partner"
+        },
+        {
+            "ruleid": "MAS-NONREG-05",
+            "obligation": "Prohibit any person who is not a registered Category A or B dealer from carrying out specified transactions or claiming to be a registrant, and monitor for false claims of registration",
+            "whoitappliesto": "Nonregistered persons and entities",
+            "risksignalstomonitor": [
+                "Claims of registration status by nonregistered parties",
+                "Unregistered individuals carrying out specified transactions",
+                "Advertising or marketing that implies registration"
+            ],
+            "requireddocumentsorcontrols": [
+                "Verification of registration status against the register",
+                "Monitoring of marketing materials and communications",
+                "Internal reporting of suspected nonregistered activity"
+            ],
+            "requiresedd": "No  this is a compliance monitoring rule"
+        }
+    ]
+}

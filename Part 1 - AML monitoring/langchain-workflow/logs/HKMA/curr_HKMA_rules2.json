@@ -1,0 +1,82 @@
+{
+    "regulationsummary": "The regulation sets out the licensing framework for money service providers, requiring applicants to demonstrate that they and any ultimate owners are fit and proper persons  Licences are issued for a fixed period, must be renewed in advance, and can be amended, revoked or suspended only after giving the licensee a reasonable opportunity to be heard and by written notice that includes reasons and the right to appeal  Licensees must keep their particulars up to date, notify the Registrar of any changes within one month, and display the licence at their premises  The regulator may impose conditions on licences and requires that any changes to premises or business activities be approved in writing  Fitandproper checks cover criminal convictions, financial standing, and compliance history, and when the ultimate owner is foreign or otherwise highrisk, enhanced due diligence EDD is mandatory",
+    "actionablerules": [
+        {
+            "ruleid": "MAS-CDD-01",
+            "obligation": "Before granting a licence, the regulator must confirm that the applicant and any ultimate owner are fit and proper persons, based on criminal, financial, and compliance criteria",
+            "whoitappliesto": "All individuals, partnerships, and corporations applying for a money service licence",
+            "risksignalstomonitor": [
+                "Criminal convictions related to money laundering, fraud, or corruption",
+                "Bankruptcy or liquidation status",
+                "Past regulatory noncompliance or penalties"
+            ],
+            "requireddocumentsorcontrols": [
+                "Criminal record checks for applicant and ultimate owners",
+                "Financial statements and proof of solvency",
+                "Evidence of compliance with previous licences or regulations"
+            ],
+            "requiresedd": "Yes  if the ultimate owner is foreign, politically exposed, or otherwise highrisk, the regulator must conduct enhanced due diligence"
+        },
+        {
+            "ruleid": "MAS-CDD-02",
+            "obligation": "Licensees must apply for licence renewal at least 45 days before expiry and submit the required form, fee, and updated information",
+            "whoitappliesto": "All licence holders of money services",
+            "risksignalstomonitor": [
+                "Late renewal applications",
+                "Missing or outdated information in renewal application"
+            ],
+            "requireddocumentsorcontrols": [
+                "Renewal application form",
+                "Renewal fee payment",
+                "Updated fitandproper documentation if any changes"
+            ],
+            "requiresedd": "No  standard renewal checks apply unless there are changes to ultimate owners or business activities"
+        },
+        {
+            "ruleid": "MAS-CDD-03",
+            "obligation": "Licensees must notify the regulator in writing of any change to their particulars eg, address, ownership, business activities within one month of the change",
+            "whoitappliesto": "All licence holders",
+            "risksignalstomonitor": [
+                "Unreported changes to premises or ownership",
+                "Delays in notifying the regulator"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notification form",
+                "Supporting documents evidencing the change"
+            ],
+            "requiresedd": "No  routine update however, if the change involves a new ultimate owner, fitandproper checks must be repeated"
+        },
+        {
+            "ruleid": "MAS-CDD-04",
+            "obligation": "If the regulator decides to revoke or suspend a licence, it must first give the licensee a reasonable opportunity to be heard and then issue a written notice that includes reasons, the duration of suspension if applicable, and the right to appeal",
+            "whoitappliesto": "All licence holders",
+            "risksignalstomonitor": [
+                "Noncompliance with licence conditions",
+                "Regulatory breaches or criminal activity",
+                "Failure to respond to regulatory inquiries"
+            ],
+            "requireddocumentsorcontrols": [
+                "Notice of decision with reasons",
+                "Record of hearing or opportunity to be heard",
+                "Documentation of any remedial actions required"
+            ],
+            "requiresedd": "No  this is a disciplinary procedure, not a duediligence assessment"
+        },
+        {
+            "ruleid": "MAS-CDD-05",
+            "obligation": "When a licensee adds new premises or changes business activities, it must obtain written approval from the regulator and ensure the premises are suitable and occupants have provided consent",
+            "whoitappliesto": "All licence holders seeking to expand or change premises",
+            "risksignalstomonitor": [
+                "Operating from unapproved premises",
+                "Lack of occupant consent",
+                "Premises unsuitable for money services"
+            ],
+            "requireddocumentsorcontrols": [
+                "Application for new premises",
+                "Proof of suitability eg, site plan, security assessment",
+                "Written consent from all occupants"
+            ],
+            "requiresedd": "No  the approval process is procedural however, if the new premises are in a highrisk jurisdiction, additional EDD may be warranted"
+        }
+    ]
+}

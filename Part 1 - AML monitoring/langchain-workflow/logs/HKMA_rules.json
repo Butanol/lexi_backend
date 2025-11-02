@@ -1,0 +1,753 @@
+{
+    "regulation_summary": "Hong Kong’s AML/CFT regime imposes a unified set of obligations on banks, insurers, money‑service operators, virtual‑asset service providers and other designated non‑financial businesses, requiring customer due diligence (CDD), enhanced due diligence (EDD) for high‑risk customers (e.g., PEPs, high‑risk jurisdictions) and strict record‑keeping, including for high‑value stored‑value facilities and wire transfers above HK$8,000.  All entities must conduct fit‑and‑proper assessments of ultimate owners, directors and responsible officers, and must promptly update the regulator on any material changes such as address, director or auditor appointments.  Precious‑metal and stone dealers, as well as virtual‑asset and money‑service providers, are subject to a licensing framework that includes registration, ongoing compliance monitoring, segregation of client assets, and mandatory reporting of large cash transactions.  The Commission and other authorities are empowered to supervise, inspect, investigate, and enforce compliance, with penalties ranging from substantial fines and licence revocation to imprisonment for non‑compliance.  The regulations also provide for cross‑jurisdictional cooperation, evidence handling, and procedural safeguards to protect confidential information disclosed under the AML/CFT rules.",
+    "actionable_rules": [
+        {
+            "ruleid": "AML-CDD-01",
+            "obligation": "Collect and verify the identity of every customer, the source of funds, and the purpose of the transaction before opening an account or providing a service",
+            "whoitappliesto": "All financial institutions, insurers, licensed money service operators, licensed VAS providers, TCSP licensees, and Category B PMS registrants",
+            "risksignalstomonitor": [
+                "Customers who provide anonymous or incomplete identification documents",
+                "Transactions involving unusually large amounts or rapid movement of funds"
+            ],
+            "requireddocumentsorcontrols": [
+                "Copy of governmentissued ID or passport",
+                "Proof of address utility bill, bank statement",
+                "Source of funds documentation salary slips, business invoices",
+                "Internal CDD policy and training records"
+            ],
+            "requiresedd": "Yes  if the customer is a highrisk individual or the transaction involves highrisk jurisdictions, complex ownership structures, or is otherwise suspicious"
+        },
+        {
+            "ruleid": "AML-REC-02",
+            "obligation": "Maintain complete records of all storedvalue facility transactions where the maximum value stored exceeds HK3,000 and the value is stored on a physical device",
+            "whoitappliesto": "SVF licensees and banks operating storedvalue facilities",
+            "risksignalstomonitor": [
+                "Frequent cash deposits or withdrawals exceeding HK3,000",
+                "Multiple small deposits that aggregate to a large amount structuring"
+            ],
+            "requireddocumentsorcontrols": [
+                "Transaction logs with customer details, date, amount, and purpose",
+                "Device serial numbers and ownership records",
+                "Periodic audit reports of storedvalue balances"
+            ],
+            "requiresedd": "No  standard recordkeeping suffices EDD is triggered only if the transaction is otherwise suspicious"
+        },
+        {
+            "ruleid": "AML-EDD-03",
+            "obligation": "Apply enhanced due diligence to DNFBPs when they conduct transactions involving real estate, securities, trust or company services, or other highrisk activities",
+            "whoitappliesto": [
+                "Licensed individual insurance agents, insurance agencies, and insurance broker companies",
+                "Licensed estate agents",
+                "Licensed VAS providers and their associated entities",
+                "TCSP licensees",
+                "Category B PMS registrants"
+            ],
+            "risksignalstomonitor": [
+                "Transactions involving offshore entities or shell companies",
+                "Complex ownership structures with no clear beneficial owner",
+                "Highvalue transactions with no clear economic rationale"
+            ],
+            "requireddocumentsorcontrols": [
+                "Beneficial ownership statements",
+                "Detailed transaction purpose and source of funds",
+                "Periodic review of the DNFBPs client base and transaction patterns",
+                "Internal EDD policy and audit trail"
+            ],
+            "requiresedd": "Yes  EDD is mandatory for all DNFBPs when they are involved in the specified highrisk transactions"
+        },
+        {
+            "ruleid": "AML-SUS-04",
+            "obligation": "Flag and investigate any transaction that is unusual, involves highrisk jurisdictions, or shows structuring or rapid movement of funds",
+            "whoitappliesto": "All regulated entities subject to the Ordinance",
+            "risksignalstomonitor": [
+                "Structuring smurfing of deposits or withdrawals",
+                "Rapid transfer of funds between accounts or jurisdictions",
+                "Transactions with no clear business or economic purpose"
+            ],
+            "requireddocumentsorcontrols": [
+                "Suspicious transaction reports STRs filed with the relevant authority",
+                "Internal investigation logs and findings",
+                "Evidence of source of funds and transaction purpose"
+            ],
+            "requiresedd": "Yes  if the transaction is flagged as suspicious, EDD must be performed on the customer and the transaction"
+        },
+        {
+            "ruleid": "AML-GUIDE-05",
+            "obligation": "Implement and maintain policies and procedures that incorporate any guidelines issued by the Monetary Authority, Securities and Futures Commission, Insurance Authority, or other relevant regulatory bodies",
+            "whoitappliesto": "All regulated entities covered by the Ordinance",
+            "risksignalstomonitor": [
+                "Noncompliance with published guidelines",
+                "Lack of documented policies or outdated procedures"
+            ],
+            "requireddocumentsorcontrols": [
+                "Copies of all relevant guidelines and the institutions internal policy documents",
+                "Records of staff training on guidelines",
+                "Audit reports confirming adherence to guidelines"
+            ],
+            "requiresedd": "No  this rule governs standard compliance EDD is triggered by other risk indicators"
+        },
+        {
+            "ruleid": "AML-ENFORCE-06",
+            "obligation": "Cooperate with investigations, provide requested records, and pay any pecuniary penalties imposed by relevant authorities",
+            "whoitappliesto": "All regulated entities, including financial institutions, insurers, VAS providers, and DNFBPs",
+            "risksignalstomonitor": [
+                "Failure to respond to inspection requests",
+                "Refusal to provide required records",
+                "Nonpayment of imposed penalties"
+            ],
+            "requireddocumentsorcontrols": [
+                "Acknowledgement of inspection or investigation requests",
+                "Copies of records produced to investigators",
+                "Payment receipts for any fines or penalties"
+            ],
+            "requiresedd": "No  this rule addresses enforcement and compliance, not due diligence"
+        },
+        {
+            "ruleid": "MAS-CDD-01",
+            "obligation": "Obtain written approval from the Commissioner before appointing a director to a Category B registrant that is a corporation",
+            "whoitappliesto": "Corporations that are Category B registrants",
+            "risksignalstomonitor": [
+                "Director with a history of financial crime or unfit background",
+                "Appointment of a director without prior written approval"
+            ],
+            "requireddocumentsorcontrols": [
+                "Fit and proper assessment report of the director",
+                "Completed application form as specified by the Commissioner",
+                "Fee payment receipt as per Schedule 3K"
+            ],
+            "requiresedd": "Yes, because the directors suitability must be assessed as a fit and proper person"
+        },
+        {
+            "ruleid": "MAS-CDD-02",
+            "obligation": "Submit all applications for director approval in the form and manner specified by the Commissioner and pay the required fee",
+            "whoitappliesto": "All entities applying for director approval under sections 53ZUW, 53ZUX or 53ZUY",
+            "risksignalstomonitor": [
+                "Missing or incomplete application forms",
+                "Failure to pay the prescribed fee"
+            ],
+            "requireddocumentsorcontrols": [
+                "Application form in the prescribed format",
+                "Proof of fee payment"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-CDD-03",
+            "obligation": "Display the certificate of registration in a conspicuous place at the principal place of business and at each branch",
+            "whoitappliesto": "All registrants, including those operating electronically",
+            "risksignalstomonitor": [
+                "Absence of a physical display of the certificate",
+                "Electronic certificate not accompanied by a printed copy"
+            ],
+            "requireddocumentsorcontrols": [
+                "Certificate of registration printed copy",
+                "Photographic evidence of display"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-CDD-04",
+            "obligation": "Notify the Commissioner in writing within one month of any change in specified particulars, such as ownership or control",
+            "whoitappliesto": "All registrants",
+            "risksignalstomonitor": [
+                "Delayed or missing notifications of changes",
+                "Changes in ultimate ownership or control without notification"
+            ],
+            "requireddocumentsorcontrols": [
+                "Updated registration certificate if applicable",
+                "Written notification to the Commissioner"
+            ],
+            "requiresedd": "Yes, if the change involves ownership or control, a review of the new owners suitability is required"
+        },
+        {
+            "ruleid": "MAS-CDD-05",
+            "obligation": "Provide written notice to the Commissioner before the intended date of cessation of business or specified transactions",
+            "whoitappliesto": "Category A and Category B registrants",
+            "risksignalstomonitor": [
+                "Failure to notify cessation in advance",
+                "Sudden cessation of business without prior notice"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written cessation notice specifying intended date",
+                "Confirmation of receipt by the Commissioner"
+            ],
+            "requiresedd": "Yes, because cessation may indicate a change in risk profile and requires assessment of remaining obligations"
+        },
+        {
+            "ruleid": "MAS-CDD-06",
+            "obligation": "Comply with any disciplinary order issued by the Commissioner, including remedial actions and payment of pecuniary penalties",
+            "whoitappliesto": "Category A and Category B registrants",
+            "risksignalstomonitor": [
+                "Noncompliance with remedial actions",
+                "Repeated contraventions of regulatory conditions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice of disciplinary order",
+                "Evidence of remedial action taken or payment of penalty"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "ruleid": "MAS-CDD-07",
+            "obligation": "Maintain confidentiality of information obtained under the Ordinance and not disclose it to unauthorized persons",
+            "whoitappliesto": "Specified persons, including relevant authorities and their employees",
+            "risksignalstomonitor": [
+                "Unauthorized disclosure of confidential information",
+                "Failure to secure sensitive documents"
+            ],
+            "requireddocumentsorcontrols": [
+                "Confidentiality agreements",
+                "Access logs and security controls"
+            ],
+            "requiresedd": "No"
+        },
+        {
+            "obligation": "A corporation must apply for a licence to provide a VA service only if it is a fit and proper person, has at least two approved responsible officers one of whom is an executive director, and has an approved premises for keeping records",
+            "whoitappliesto": "Corporate applicants for VA service licences",
+            "risksignalstomonitor": [
+                "Application from a corporation that is not a company under the Companies Ordinance",
+                "Missing or unapproved responsible officers in the application",
+                "Premises not approved by the Commission"
+            ],
+            "requireddocumentsorcontrols": [
+                "Fit and proper assessment report",
+                "List of responsible officers with approval certificates",
+                "Premises approval notice from the Commission",
+                "Proof of payment of prescribed fee"
+            ],
+            "requiresedd": "Yes  the fit and proper assessment must include enhanced due diligence on the corporations directors, ultimate owners, and financial standing",
+            "ruleid": "MAS-VA-LIC-01"
+        },
+        {
+            "obligation": "Every responsible officer of a licensed provider must be approved by the Commission, have sufficient authority within the provider, and be a fit and proper person",
+            "whoitappliesto": "Responsible officers of licensed VA providers",
+            "risksignalstomonitor": [
+                "Unapproved or unfit individuals listed as responsible officers",
+                "Responsible officers lacking documented authority",
+                "Responsible officers who are not resident in Hong Kong"
+            ],
+            "requireddocumentsorcontrols": [
+                "Approval certificate from the Commission",
+                "Letter of authority from the provider",
+                "Proof of Hong Kong residency eg, address, ID"
+            ],
+            "requiresedd": "Yes  the Commission must conduct enhanced due diligence on each responsible officers background, including criminal history and financial integrity",
+            "ruleid": "MAS-VA-RO-02"
+        },
+        {
+            "obligation": "An ultimate owner of a licensed provider must obtain written approval from the Commission before becoming an ultimate owner and must keep the Commission informed of any changes to their contact details within 7 business days",
+            "whoitappliesto": "Ultimate owners of licensed VA providers",
+            "risksignalstomonitor": [
+                "Unapproved ultimate owners listed in the providers records",
+                "Changes to ultimate owner details not reported within 7 days",
+                "Ultimate owners with a history of moneylaundering or terrorist financing offences"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written approval notice from the Commission",
+                "Updated contact details address, phone, email",
+                "Fit and proper assessment for the ultimate owner"
+            ],
+            "requiresedd": "Yes  enhanced due diligence is required on the ultimate owners identity, ownership structure, and criminal record",
+            "ruleid": "MAS-VA-UO-03"
+        },
+        {
+            "obligation": "Client assets held by a licensed provider or its associated entities must be kept separate from the providers own assets and cannot be used to satisfy any court order or execution against the provider",
+            "whoitappliesto": "Licensed VA providers and their associated entities",
+            "risksignalstomonitor": [
+                "Mixing of client assets with company assets in accounting records",
+                "Use of client assets to settle debts or obligations of the provider",
+                "Failure to maintain separate custody accounts"
+            ],
+            "requireddocumentsorcontrols": [
+                "Segregated custody account statements",
+                "Internal control procedures for client asset segregation",
+                "Audit trail of all client asset movements"
+            ],
+            "requiresedd": "Yes  the provider must perform enhanced due diligence on the source of client assets and monitor for suspicious transfers",
+            "ruleid": "MAS-VA-CA-04"
+        },
+        {
+            "obligation": "A licensed provider must keep all records or documents required under the Ordinance only at premises approved by the Commission",
+            "whoitappliesto": "Licensed VA providers",
+            "risksignalstomonitor": [
+                "Use of nonapproved premises for record keeping",
+                "Inadequate security controls at approved premises",
+                "Failure to update the register with approved premises details"
+            ],
+            "requireddocumentsorcontrols": [
+                "Premises approval notice from the Commission",
+                "Security and access control logs for the premises",
+                "Regular audit reports on premises compliance"
+            ],
+            "requiresedd": "Yes  enhanced due diligence is required to verify the suitability and security of the approved premises",
+            "ruleid": "MAS-VA-PM-05"
+        },
+        {
+            "obligation": "A licensed person or ultimate owner must notify the Commission in writing of any change in any information that has been provided to the Commission within 7 business days",
+            "whoitappliesto": "Licensed VA providers and ultimate owners",
+            "risksignalstomonitor": [
+                "Delayed or missing notifications of changes in ownership, contact details, or business address",
+                "Inconsistent information between the register and the providers records",
+                "Failure to update the register after a change"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notification form with details of the change",
+                "Supporting documents eg, updated ID, address proof",
+                "Confirmation receipt from the Commission"
+            ],
+            "requiresedd": "No  standard notification procedures apply, but the Commission may review the change for fit and proper compliance",
+            "ruleid": "MAS-VA-NC-06"
+        },
+        {
+            "obligation": "A licensed provider must submit a written notice to the Commission within 7 business days before it intends to cease providing any VA service for which it is licensed",
+            "whoitappliesto": "Licensed providers",
+            "risksignalstomonitor": [
+                "Planned cessation of a VA service",
+                "Unusual or abrupt changes in service offerings"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Full description of the intended cessation"
+            ],
+            "requiresedd": "Yes  any cessation may alter the providers risk profile and requires review of client exposure",
+            "ruleid": "AML-REG-01"
+        },
+        {
+            "obligation": "A licensed provider must notify the Commission in writing at least 7 business days in advance if it intends to change the address at which it proposes to provide any VA service",
+            "whoitappliesto": "Licensed providers",
+            "risksignalstomonitor": [
+                "Change of business address",
+                "Relocation to highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Updated address details"
+            ],
+            "requiresedd": "Yes  address changes can affect jurisdictional risk and client asset protection",
+            "ruleid": "AML-REG-02"
+        },
+        {
+            "obligation": "Within 7 business days after a person becomes or ceases to be a director of a licensed provider, both the person and the licensed provider must notify the Commission in writing of the name, address, and nature of the position",
+            "whoitappliesto": "Licensed providers and new or departing directors",
+            "risksignalstomonitor": [
+                "Director changes",
+                "Potential conflicts of interest"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Directors personal details and role description"
+            ],
+            "requiresedd": "Yes  director changes can impact governance and risk management",
+            "ruleid": "AML-REG-03"
+        },
+        {
+            "obligation": "An associated entity of a licensed provider must notify the Commission in writing within 7 business days after it becomes or ceases to be such an entity, and must provide all particulars specified in Schedule 3D",
+            "whoitappliesto": "Associated entities of licensed providers",
+            "risksignalstomonitor": [
+                "Formation or dissolution of an associated entity",
+                "Changes in ownership or control"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written notice to the Commission",
+                "Schedule 3D particulars eg, entity details, ownership structure"
+            ],
+            "requiresedd": "Yes  associated entities can be conduits for money laundering or fraud",
+            "ruleid": "AML-REG-04"
+        },
+        {
+            "obligation": "An associated entity of a licensed provider must not, at any time after becoming such an entity, conduct any business other than receiving or holding client assets of the licensed provider unless expressly authorized in writing by the Commission",
+            "whoitappliesto": "Associated entities of licensed providers",
+            "risksignalstomonitor": [
+                "Unapproved business activities",
+                "Diversification into unrelated services"
+            ],
+            "requireddocumentsorcontrols": [
+                "Commission authorization if any",
+                "Internal policy confirming restricted activities"
+            ],
+            "requiresedd": "Yes  deviation from permitted activities signals potential misuse of client assets",
+            "ruleid": "AML-REG-05"
+        },
+        {
+            "obligation": "A licensed provider must appoint an eligible auditor within 1 month after it becomes licensed and notify the Commission in writing of the auditors name and address within 7 business days of the appointment",
+            "whoitappliesto": "Licensed providers",
+            "risksignalstomonitor": [
+                "Failure to appoint an auditor",
+                "Delayed auditor appointment"
+            ],
+            "requireddocumentsorcontrols": [
+                "Appointment letter of the auditor",
+                "Written notice to the Commission",
+                "Compliance with eligibility criteria Section 53ZSA"
+            ],
+            "requiresedd": "No  this is a standard compliance requirement, but audit quality should be monitored",
+            "ruleid": "AML-REG-06"
+        },
+        {
+            "obligation": "Collect a valid business registration certificate, a declaration that the precious metals and stones business will be carried out for a lawful purpose, written consent from all occupants of any domestic premises to be used as business premises, and the prescribed application fee when a person applies for Category A registration",
+            "whoitappliesto": "Applicants for Category A registration",
+            "risksignalstomonitor": [
+                "Missing or incomplete business registration certificate",
+                "No written consent from premises occupants",
+                "Failure to declare lawful purpose"
+            ],
+            "requireddocumentsorcontrols": [
+                "Business registration certificate",
+                "Declaration of lawful purpose",
+                "Written consent from premises occupants",
+                "Proof of fee payment"
+            ],
+            "requiresedd": "Yes  the applicant must undergo a fitandproper assessment, including checks for criminal convictions, bankruptcy, and compliance with regulatory conditions",
+            "ruleid": "MAS-REG-A-01"
+        },
+        {
+            "obligation": "Perform a fitandproper assessment for each individual applicant, partner, director or ultimate owner, checking for convictions of specified offences, overseas convictions for money laundering or terrorist financing, failure to comply with regulatory requirements, undischarged bankruptcy, and liquidation or windingup status",
+            "whoitappliesto": "Individuals, partners, directors, ultimate owners of Category A or B registrants",
+            "risksignalstomonitor": [
+                "Criminal convictions related to financial crime",
+                "Overseas convictions for money laundering or terrorism financing",
+                "Undischarged bankruptcy filings",
+                "Liquidation or windingup orders"
+            ],
+            "requireddocumentsorcontrols": [
+                "Criminal record checks",
+                "Bankruptcy and insolvency records",
+                "Regulatory compliance history",
+                "Fitandproper assessment report"
+            ],
+            "requiresedd": "Yes  the assessment is a form of Enhanced Due Diligence EDD required by the ordinance",
+            "ruleid": "HKMA-R-001"
+        },
+        {
+            "obligation": "Cancel or suspend a Category A or B registration if the registrant contravenes any registration condition, fails to pay the annual fee, fails to comply with remedial orders, or if circumstances suggest the business is being carried out for an unlawful purpose",
+            "whoitappliesto": "Registered Category A and Category B precious metals and stones dealers",
+            "risksignalstomonitor": [
+                "Nonpayment of annual fee",
+                "Failure to comply with remedial orders",
+                "Evidence of unlawful business purpose",
+                "Revocation of premises occupant consent"
+            ],
+            "requireddocumentsorcontrols": [
+                "Payment records for annual fee",
+                "Compliance reports on remedial orders",
+                "Internal audit findings on business purpose",
+                "Premises occupant consent records"
+            ],
+            "requiresedd": "No  standard compliance monitoring is sufficient",
+            "ruleid": "MAS-CANC-03"
+        },
+        {
+            "obligation": "Obtain written approval from the Commissioner before a person becomes an ultimate owner or partner of a Category B registrant, and ensure that the person satisfies the fitandproper test",
+            "whoitappliesto": "Prospective ultimate owners and partners of Category B registrants",
+            "risksignalstomonitor": [
+                "Unapproved ultimate owners or partners",
+                "Individuals with disqualifying criminal or financial history",
+                "Lack of written approval documentation"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written approval from the Commissioner",
+                "Fitandproper assessment report",
+                "Documentation of ultimate ownership or partnership status"
+            ],
+            "requiresedd": "Yes  the approval process includes EDD to assess the ultimate owner or partner",
+            "ruleid": "MAS-ULT-04"
+        },
+        {
+            "obligation": "Prohibit any person who is not a registered Category A or B dealer from carrying out specified transactions or claiming to be a registrant, and monitor for false claims of registration",
+            "whoitappliesto": "Nonregistered persons and entities",
+            "risksignalstomonitor": [
+                "Claims of registration status by nonregistered parties",
+                "Unregistered individuals carrying out specified transactions",
+                "Advertising or marketing that implies registration"
+            ],
+            "requireddocumentsorcontrols": [
+                "Verification of registration status against the register",
+                "Monitoring of marketing materials and communications",
+                "Internal reporting of suspected nonregistered activity"
+            ],
+            "requiresedd": "No  this is a compliance monitoring rule",
+            "ruleid": "MAS-NONREG-05"
+        },
+        {
+            "obligation": "Identify the customer and verify the customers identity using reliable documents, data or information from a governmental body, relevant authority, or a recognized digital identification system before establishing a business relationship",
+            "whoitappliesto": "All customers of financial institutions and DNFBPs, including TCSP licensees and Category B PMS registrants",
+            "risksignalstomonitor": [
+                "Customer fails to provide valid identification documents",
+                "Customers information is inconsistent with public records"
+            ],
+            "requireddocumentsorcontrols": [
+                "Government-issued ID identity card, passport, etc",
+                "Proof of address",
+                "Digital ID verification if available"
+            ],
+            "requiresedd": "No, this is standard CDD",
+            "ruleid": "HKMA-R-007"
+        },
+        {
+            "obligation": "Identify and verify the beneficial owners of a customer who is a legal person or trust, ensuring the institution knows who ultimately owns or controls more than 25 of the entity",
+            "whoitappliesto": "Customers that are corporations, partnerships, trusts, or other legal persons",
+            "risksignalstomonitor": [
+                "Ownership structure is opaque or complex",
+                "Beneficial owner is a highrisk jurisdiction or PEP"
+            ],
+            "requireddocumentsorcontrols": [
+                "Certificate of incorporation or registration",
+                "Shareholder register",
+                "Trust deed or partnership agreement",
+                "Beneficial ownership declaration"
+            ],
+            "requiresedd": "Yes, if the beneficial owner is a PEP or from a highrisk jurisdiction",
+            "ruleid": "HKMA-R-008"
+        },
+        {
+            "obligation": "Carry out CDD before any occasional transaction of 120,000 or more, or any wirevirtual asset transfer of 8,000 or more, unless the customer is a preexisting customer with prior CDD",
+            "whoitappliesto": "All customers, including preexisting ones, for transactions meeting the thresholds",
+            "risksignalstomonitor": [
+                "Large or multiple linked transactions",
+                "Transactions involving highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Transaction details and source of funds",
+                "Customer identification records",
+                "Beneficial owner verification if applicable"
+            ],
+            "requiresedd": "Yes, if the transaction involves a PEP, highrisk jurisdiction, or suspicious patterns",
+            "ruleid": "HKMA-R-009"
+        },
+        {
+            "obligation": "Apply Enhanced Due Diligence EDD for customers who are PEPs, have a highrisk source of wealth, or are from a highrisk jurisdiction, including additional verification of source of funds and wealth",
+            "whoitappliesto": "PEPs, former PEPs, customers from highrisk jurisdictions, and customers with complex ownership structures",
+            "risksignalstomonitor": [
+                "Publicly known PEP status",
+                "Highrisk jurisdiction of residence or business",
+                "Unusual or large source of funds"
+            ],
+            "requireddocumentsorcontrols": [
+                "PEP declaration and supporting evidence",
+                "Detailed source of wealth documentation",
+                "Periodic review and monitoring reports",
+                "Senior management approval"
+            ],
+            "requiresedd": "Yes, mandatory for all identified highrisk customers",
+            "ruleid": "HKMA-R-010"
+        },
+        {
+            "obligation": "Continuously monitor the business relationship by reviewing customer information, scrutinizing transactions for unusual patterns, and documenting findings",
+            "whoitappliesto": "All customers, with heightened focus on highrisk and preexisting customers",
+            "risksignalstomonitor": [
+                "Complex or unusually large transactions",
+                "Transactions with no apparent economic purpose",
+                "Changes in customers account activity or ownership"
+            ],
+            "requireddocumentsorcontrols": [
+                "Periodic review logs",
+                "Transaction monitoring system alerts",
+                "Written findings and action plans"
+            ],
+            "requiresedd": "Yes, if monitoring reveals new highrisk indicators",
+            "ruleid": "HKMA-R-011"
+        },
+        {
+            "obligation": "For customers not physically present for identification, perform at least one additional verification measure such as a secondary ID check, supplementary information verification, or ensure the first payment is made through an account opened in the customers name with a compliant institution",
+            "whoitappliesto": "Customers who are not physically present for identification",
+            "risksignalstomonitor": [
+                "Lack of physical presence",
+                "Use of remote or digital identification only"
+            ],
+            "requireddocumentsorcontrols": [
+                "Secondary ID documents",
+                "Supplementary verification data",
+                "Confirmation of account opening with a compliant institution"
+            ],
+            "requiresedd": "Yes, if the customer is also a PEP or from a highrisk jurisdiction",
+            "ruleid": "HKMA-R-012"
+        },
+        {
+            "obligation": "Collect and record the originators account number or unique reference, originators address, identification number or dateplace of birth, recipients name, and recipients account number or unique reference for every wire transfer of 8,000 or more",
+            "whoitappliesto": "All ordering institutions processing domestic or foreign wire transfers of 8,000 or more",
+            "risksignalstomonitor": [
+                "Transfers above the threshold without complete originatorrecipient details",
+                "Large singleday volume of highvalue transfers"
+            ],
+            "requireddocumentsorcontrols": [
+                "Wire transfer instruction form with required fields",
+                "Customer identification documents ID card, passport, etc",
+                "Internal audit log confirming data capture",
+                "Approval from senior management for each highvalue transfer"
+            ],
+            "requiresedd": "Yes  EDD is required for any transfer where the originator or recipient is a politically exposed person, a known or suspected moneylaundering suspect, or a foreign entity with limited regulatory oversight",
+            "ruleid": "MAS-WIRE-01"
+        },
+        {
+            "obligation": "For wire transfers below 8,000, collect and record the originators account number or unique reference, originators address, recipients name, and recipients account number or unique reference",
+            "whoitappliesto": "All ordering institutions processing domestic or foreign wire transfers below 8,000",
+            "risksignalstomonitor": [
+                "Frequent lowvalue transfers that aggregate to large amounts",
+                "Transfers to or from highrisk jurisdictions"
+            ],
+            "requireddocumentsorcontrols": [
+                "Wire transfer instruction form with required fields",
+                "Customer identification records",
+                "Transaction monitoring system flagging aggregation of lowvalue transfers"
+            ],
+            "requiresedd": "No  standard due diligence suffices unless other highrisk indicators are present",
+            "ruleid": "MAS-WIRE-02"
+        },
+        {
+            "obligation": "If a beneficiary or intermediary institution receives a wire transfer lacking any required information, it must obtain the missing data from the ordering institution within three business days and, if unavailable, either restrictterminate the relationship or implement reasonable AMLTFT mitigation measures",
+            "whoitappliesto": "All beneficiary and intermediary institutions receiving wire transfers",
+            "risksignalstomonitor": [
+                "Missing or incomplete originatorrecipient data",
+                "Requests for information that are denied or delayed"
+            ],
+            "requireddocumentsorcontrols": [
+                "Written request for missing information",
+                "Record of response time and action taken",
+                "Documentation of any relationship restriction or mitigation steps"
+            ],
+            "requiresedd": "Yes  EDD is required if the missing information relates to a highrisk jurisdiction or a knownsuspected moneylaundering suspect",
+            "ruleid": "MAS-WIRE-03"
+        },
+        {
+            "obligation": "Apply enhanced due diligence for any customer or beneficial owner that is a politically exposed person, a known or suspected moneylaundering suspect, or a customer from a highrisk jurisdiction, including sourceofwealth verification and ongoing monitoring",
+            "whoitappliesto": "All customers, beneficial owners, and highrisk counterparties",
+            "risksignalstomonitor": [
+                "Political exposure, public office, or close associates",
+                "Large or irregular cash deposits",
+                "Transactions involving highrisk countries"
+            ],
+            "requireddocumentsorcontrols": [
+                "PEP declaration and verification documents",
+                "Sourceofwealth statements",
+                "Enhanced transaction monitoring rules",
+                "Periodic review reports"
+            ],
+            "requiresedd": "Yes  EDD is mandatory for all identified highrisk categories",
+            "ruleid": "MAS-EDD-01"
+        },
+        {
+            "obligation": "Maintain original or copies of all documents and records related to each transaction and customer for at least five years, and keep customer files throughout the business relationship plus five years after termination",
+            "whoitappliesto": "All financial institutions and DNFBPs",
+            "risksignalstomonitor": [
+                "Missing or incomplete record retention",
+                "Failure to retain records beyond the statutory period"
+            ],
+            "requireddocumentsorcontrols": [
+                "Secure electronic database or microfilm storage",
+                "Retention schedule and audit trail",
+                "Periodic internal audits of recordkeeping compliance"
+            ],
+            "requiresedd": "No  this is a standard recordkeeping requirement",
+            "ruleid": "MAS-REC-01"
+        },
+        {
+            "obligation": "Before establishing a correspondent banking relationship with a foreign institution, collect sufficient information on the institutions business, reputation, supervision quality, and AMLTFT controls obtain senior management approval and document responsibilities for both parties",
+            "whoitappliesto": "All authorized institutions entering correspondent banking relationships",
+            "risksignalstomonitor": [
+                "Lack of physical presence in the foreign jurisdiction",
+                "Poor regulatory supervision or weak AMLTFT controls",
+                "Unverified customer due diligence procedures"
+            ],
+            "requireddocumentsorcontrols": [
+                "Duediligence report on the foreign institution",
+                "Senior management approval documentation",
+                "Agreements outlining responsibilities and datasharing protocols",
+                "Ongoing monitoring plan for the relationship"
+            ],
+            "requiresedd": "Yes  EDD is required if the foreign institution is located in a highrisk jurisdiction or has inadequate AMLTFT controls",
+            "ruleid": "MAS-CORR-01"
+        },
+        {
+            "obligation": "Track and record the 12month deemed licensing period for each individual who meets the conditions for deemed licensing",
+            "whoitappliesto": "Individuals who have applied for a VA service licence 53ZRL and accreditation 53ZRM and satisfy all conditions in subsection 1ad",
+            "risksignalstomonitor": [
+                "Application remains pending beyond the 12month period without withdrawal or objection",
+                "No recorded start or end date for the deemed licensing period"
+            ],
+            "requireddocumentsorcontrols": [
+                "Application forms 53ZRL, 53ZRM",
+                "Internal log of start date first day of deemed period and end date withdrawal, refusal, or 12month expiry",
+                "Automated reminder system to flag when the 12month period is approaching"
+            ],
+            "requiresedd": "No",
+            "ruleid": "MAS-VA-01"
+        },
+        {
+            "obligation": "Issue a written notice section 5 or 7 notice to the individual within the first 12 months of the decision on their application",
+            "whoitappliesto": "All individuals whose application decisions are made under sections 5 or 7",
+            "risksignalstomonitor": [
+                "No notice sent within 12 months of decision",
+                "Notice sent after the 12month deadline"
+            ],
+            "requireddocumentsorcontrols": [
+                "Template notice containing decision, reasons, and objection rights",
+                "Timestamped electronic delivery record",
+                "Audit trail confirming receipt by the individual"
+            ],
+            "requiresedd": "No",
+            "ruleid": "MAS-VA-02"
+        },
+        {
+            "obligation": "Provide a 12month objection period for deemed withdrawal of an application and monitor for objections",
+            "whoitappliesto": "All applicants whose applications are subject to deemed withdrawal under section 10",
+            "risksignalstomonitor": [
+                "Objection not filed within the 12month period",
+                "Objection filed after the 12month deadline"
+            ],
+            "requireddocumentsorcontrols": [
+                "Record of the date the specified notice was issued",
+                "Log of objection receipt and date",
+                "Automated reminder to the applicant 30 days before objection deadline"
+            ],
+            "requiresedd": "No",
+            "ruleid": "MAS-VA-03"
+        },
+        {
+            "obligation": "Enforce a 3month closingdown period for corporations after denial, withdrawal, or refusal of a VA service licence",
+            "whoitappliesto": "Corporations whose application for a VA service licence 53ZRK is denied, withdrawn, or refused",
+            "risksignalstomonitor": [
+                "Business continues to operate beyond the 3month closingdown period",
+                "No formal cessation notice issued to the corporation"
+            ],
+            "requireddocumentsorcontrols": [
+                "Closingdown period start date date of notice",
+                "End date 12month expiry or 3month period",
+                "Cessation confirmation from the corporation"
+            ],
+            "requiresedd": "No",
+            "ruleid": "MAS-VA-04"
+        },
+        {
+            "obligation": "Conduct Enhanced Due Diligence on individuals applying as responsible officers when any of the conditions in subsection 1ad are not fully satisfied",
+            "whoitappliesto": "Individuals applying for responsible officer approval 53ZRP who do not meet all conditions in subsection 1ad",
+            "risksignalstomonitor": [
+                "Incomplete or missing application documents",
+                "Applicant from a highrisk jurisdiction or on a sanctions list",
+                "Prior regulatory or criminal history"
+            ],
+            "requireddocumentsorcontrols": [
+                "Full application package 53ZRL, 53ZRM, 53ZRP",
+                "Background check reports sanctions, PEP, adverse media",
+                "Source of funds and wealth verification",
+                "Approval from senior compliance officer"
+            ],
+            "requiresedd": "Yes  due to incomplete documentation or highrisk profile",
+            "ruleid": "MAS-VA-05"
+        },
+        {
+            "obligation": "Submit a cash transaction report for any specified cash transaction exceeding HK120,000 or equivalent by a nonHong Kong precious metals and stones dealer",
+            "whoitappliesto": "NonHong Kong precious metals and stones dealers conducting cash transactions with customers",
+            "risksignalstomonitor": [
+                "Cash transaction amount  HK120,000",
+                "Customer from a highrisk country or with suspicious travel patterns"
+            ],
+            "requireddocumentsorcontrols": [
+                "Cash transaction report containing dealer info, customer info, travel details, transaction details, and payment amount",
+                "Verification of customer identity and source of funds",
+                "Retention of supporting documents for 5 years"
+            ],
+            "requiresedd": "Yes  for customers with highrisk indicators or large cash amounts",
+            "ruleid": "MAS-VA-06"
+        }
+    ]
+}
