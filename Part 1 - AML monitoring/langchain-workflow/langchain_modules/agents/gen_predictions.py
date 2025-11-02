@@ -82,5 +82,5 @@ def add_suspicion_scores(
 
 df_with_preds = add_suspicion_scores(
     input_csv="Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions.csv",
-    output_csv="Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_with_suspicion_score.csv"
+    output_csv="Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/test_res.csv"
 )
