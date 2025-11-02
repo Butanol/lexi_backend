@@ -15,6 +15,6 @@ def update_rules_irl(csv_input_path = "Part 1 - AML monitoring/langchain-workflo
     )
     
 if __name__ == "__main__":
-    input = "Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_mock_1000_for_participants.csv"
-    output = "Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_final100.csv"
+    input = "Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_mock_1000_for_participants(part 1).csv"
+    output = "Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_final_part1.csv"
     update_rules_irl(input, output)
