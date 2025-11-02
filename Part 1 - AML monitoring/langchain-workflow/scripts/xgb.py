@@ -6,7 +6,7 @@ from xgboost import XGBClassifier
 # ----------------------------
 # 1. Load dataset
 # ----------------------------
-df = pd.read_csv("Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions.csv")
+df = pd.read_csv("Part 1 - AML monitoring/langchain-workflow/langchain_modules/data/transactions_mock_1000_for_participants.csv")
 
 # Create binary label: suspicious or STR filed
 df["is_suspicious"] = (
@@ -17,6 +17,7 @@ df["is_suspicious"] = (
 drop_cols = [
     "transaction_id",
     "customer_id",
+    "risk_score",
     "risk_reasoning",
     "booking_datetime",
     "value_date",
@@ -67,11 +68,11 @@ model.fit(X, y)
 # 5. Save model and preprocessing
 # ----------------------------
 # Save XGBoost model
-with open("Part 1 - AML monitoring/langchain-workflow/model/xgb_suspicion_model.pkl", "wb") as f:
+with open("Part 1 - AML monitoring/langchain-workflow/model/xgb_suspicion_model1.pkl", "wb") as f:
     pickle.dump(model, f)
 
 # Save label encoders
-with open("Part 1 - AML monitoring/langchain-workflow/model/label_encoders.pkl", "wb") as f:
+with open("Part 1 - AML monitoring/langchain-workflow/model/label_encoders1.pkl", "wb") as f:
     pickle.dump(label_encoders, f)
 
 print("✅ Model and label encoders saved successfully.")
